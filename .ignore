@@ -1,0 +1,10 @@
+# ripgrep ignore file: keeps Grep/Glob from sweeping originals even outside git.
+# Find originals via knowledge/ mirrors, INDEX.md files or manifests/inventory.csv.
+/archive/
+/data/raw
+/data/prior
+/CLEAR 2.0 (misc docs)/
+/RAW Data/
+/inbox/
+# Gitignored (too big for git) but meant to be grepped: one row per original file.
+!/manifests/inventory.csv

@@ -1,0 +1,130 @@
+# CLEAR 2.0 design tokens: the ONLY place figure colors, fonts and sizes are defined.
+# Read by clear.viz (matplotlib), clear.viz.plotly_template() (dashboard) and figure scripts.
+# Standard: docs/standards/figures.md. Never hard-code a hex color anywhere else.
+
+version: 1
+
+# --- Alert levels -------------------------------------------------------------
+# PROVISIONAL: keys and colors follow the official AQHI risk categories
+# (Environment and Climate Change Canada scale) until methodology/alert-levels.md
+# defines CLEAR's own levels in Phase 2. Thresholds are NOT design tokens; they live
+# in config/ and are passed to clear.viz.pm25_norm() at plot time.
+alert_levels:
+  provisional: true
+  note: "Aligned to AQHI risk categories; confirm against methodology/alert-levels.md (Phase 2)."
+  order: [low, moderate, high, very_high]
+  labels:
+    low: Low
+    moderate: Moderate
+    high: High
+    very_high: Very high
+  colors:
+    low: "#0099CC"        # AQHI 2 (Low risk, 1-3)
+    moderate: "#FFCC00"   # AQHI 5 (Moderate risk, 4-6)
+    high: "#FF0000"       # AQHI 8 (High risk, 7-10)
+    very_high: "#660000"  # AQHI 10+ (Very high risk)
+
+# Full official AQHI index scale, for figures that plot the index itself.
+aqhi_scale:
+  "1": "#00CCFF"
+  "2": "#0099CC"
+  "3": "#006699"
+  "4": "#FFFF00"
+  "5": "#FFCC00"
+  "6": "#FF9933"
+  "7": "#FF6666"
+  "8": "#FF0000"
+  "9": "#CC0000"
+  "10": "#990000"
+  "10+": "#660000"
+
+# --- Categorical (Okabe-Ito, colorblind-safe), in cycle order -----------------------
+categorical:
+  - "#0072B2"  # blue
+  - "#E69F00"  # orange
+  - "#009E73"  # bluish green
+  - "#D55E00"  # vermillion
+  - "#56B4E9"  # sky blue
+  - "#CC79A7"  # reddish purple
+  - "#F0E442"  # yellow
+  - "#000000"  # black
+
+# --- Data sources: one permanent color each (Okabe-Ito based) -----------------
+# Keys are GLOSSARY.md canonical code names, so color("source.<key>") matches the data.
+sources:
+  naps: "#0072B2"       # Canada NAPS federal network
+  mecp: "#56B4E9"       # Ontario MECP air monitoring network
+  aqs: "#009E73"        # US EPA AQS monitors
+  purpleair: "#CC79A7"  # PurpleAir low-cost sensors
+  satellite: "#D55E00"  # satellite fire/smoke/AOD products (hms_smoke, firms, aod) as one family
+  era5: "#E69F00"       # ERA5 reanalysis (wind)
+
+source_labels:
+  naps: NAPS
+  mecp: Ontario MECP
+  aqs: US EPA AQS
+  purpleair: PurpleAir
+  satellite: Satellite
+  era5: ERA5
+
+# --- Sequential colormaps (matplotlib names) -----------------------------------
+sequential:
+  pm25: cividis   # continuous PM2.5; breakpoints at the alert thresholds from config/
+
+# --- Neutrals -----------------------------------------------------------------
+neutrals:
+  ink: "#1A1A1A"         # text, axes, primary lines
+  muted: "#595959"       # secondary text, annotations
+  grid: "#D9D9D9"        # gridlines
+  background: "#FFFFFF"  # figure + axes background
+  missing: "#BDBDBD"     # missing / no-data cells
+
+# --- Typography ---------------------------------------------------------------
+# DejaVu Sans ships with matplotlib, so figures render identically on every machine and CI.
+fonts:
+  family: DejaVu Sans
+  plotly_family: "DejaVu Sans, Arial, sans-serif"
+
+# --- Size presets -------------------------------------------------------------
+# width/height in inches, font sizes in points. PNG dpi kept so files stay < 1 MB
+# (the commit guard blocks larger files); SVG is vector and always exported too.
+presets:
+  paper-1col:
+    width_in: 3.5
+    height_in: 2.6
+    dpi: 300
+    font_size_pt: 8
+    title_size_pt: 9
+    line_width_pt: 1.0
+  paper-2col:
+    width_in: 7.2
+    height_in: 4.0
+    dpi: 300
+    font_size_pt: 8
+    title_size_pt: 10
+    line_width_pt: 1.0
+  slide-16x9:
+    width_in: 13.33
+    height_in: 7.5
+    dpi: 150
+    font_size_pt: 18
+    title_size_pt: 24
+    line_width_pt: 2.0
+  poster:
+    width_in: 16.0
+    height_in: 12.0
+    dpi: 200
+    font_size_pt: 24
+    title_size_pt: 32
+    line_width_pt: 2.5
+
+# --- Maps (cartopy, `geo` dependency group) ------------------------------------
+# One projection for every map: Statistics Canada Lambert Conformal Conic (EPSG:3347
+# parameters). The map extent is the study domain, a methodology constant: it lives in
+# config/grid.yaml, not here. Both are read through clear.viz.map_axes().
+maps:
+  projection:
+    name: lambert_conformal
+    central_longitude_deg: -91.866667
+    central_latitude_deg: 63.390675
+    standard_parallels_deg: [49.0, 77.0]

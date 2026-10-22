@@ -1,0 +1,49 @@
+name: Methodology question
+description: A choice or conflict that needs a ruling. The Methodologist drafts an ADR; Ryan decides.
+title: "[METHOD] "
+labels: ["methodology-question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Methodology decisions belong to Ryan. State the question and the options; do not resolve it here.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Part
+      description: Provisional list; the Methodologist confirms it in Phase 2.
+      options:
+        - target-pm25
+        - alert-levels
+        - stations
+        - bad-air-events
+        - lag-plume
+        - purpleair
+        - satellite-fire-smoke
+        - era5-wind
+        - grid
+        - models
+        - dashboard
+        - other / cross-cutting
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: One question. If sources conflict, say which ones.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Known options with pros and cons. Leave blank if unknown.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Mirror paths and literature notes that bear on this.
+      placeholder: |
+        knowledge/docs/<slug>.md
+        research/literature/<topic>.md

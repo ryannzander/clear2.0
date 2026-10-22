@@ -1,0 +1,35 @@
+# CLEAR 2.0 matplotlib style: layout and line rules only.
+# Colors, fonts and sizes come from tokens.yaml and are applied by clear.viz.use_style().
+
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+axes.grid.axis: y
+axes.axisbelow: True
+axes.titlelocation: left
+axes.titleweight: bold
+axes.labelpad: 4.0
+axes.xmargin: 0.02
+
+grid.linestyle: -
+grid.linewidth: 0.5
+
+legend.frameon: False
+legend.borderaxespad: 0.3
+
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 3.0
+ytick.major.size: 3.0
+
+lines.solid_capstyle: round
+
+figure.constrained_layout.use: True
+
+# Standard bbox: the saved file is exactly the preset size; constrained layout keeps
+# labels inside it. A tight bbox would crop and break the preset width.
+savefig.bbox: standard
+
+# Keep text as text in SVG (editable, smaller) and make SVG output deterministic.
+svg.fonttype: none
+svg.hashsalt: clear2

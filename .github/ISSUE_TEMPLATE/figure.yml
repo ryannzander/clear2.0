@@ -1,0 +1,55 @@
+name: Figure
+description: A new or updated figure. The Figure Maker picks it up with /figure.
+title: "[FIG] "
+labels: ["figure"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Output is `figures/src/fig_<slug>.py` plus `figures/out/fig_<slug>.{png,svg,md}`.
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: Lowercase, hyphens or underscores. File becomes `fig_<slug>`.
+      placeholder: <slug>
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What the figure shows and the claim it supports.
+    validations:
+      required: true
+  - type: dropdown
+    id: preset
+    attributes:
+      label: Size preset
+      options:
+        - paper-1col
+        - paper-2col
+        - slide-16x9
+        - poster
+    validations:
+      required: true
+  - type: textarea
+    id: data_inputs
+    attributes:
+      label: Data inputs
+      description: Datasets, experiment metrics or tables the figure reads.
+      placeholder: |
+        <dataset-slug>
+        research/experiments/EXP-NNN-slug/metrics.json
+    validations:
+      required: true
+  - type: dropdown
+    id: headline
+    attributes:
+      label: Headline?
+      description: "Headline figures go to Ryan before `headline: true` is set."
+      options:
+        - "No"
+        - Candidate (show Ryan first)
+    validations:
+      required: true

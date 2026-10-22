@@ -1,0 +1,10 @@
+# Study domain of the `grid` part. Loaded by clear.viz.map_domain() for map extents.
+# Spec: methodology/grid.md (not written yet; Phase 2). Part status: STATUS.md, row `grid`.
+# PROVISIONAL: every value below is a Phase 0 placeholder carried over from the old
+# "1000 km domain" folder names (STATUS.md). The grid spec, or an ADR, confirms or
+# replaces them; until then nothing outside figures may depend on them.
+domain:
+  provisional: true
+  center_lat_deg: 43.6532    # PROVISIONAL: Toronto (City Hall), not yet checked against old docs
+  center_lon_deg: -79.3832   # PROVISIONAL: as above
+  half_width_km: 1000        # PROVISIONAL: "1000 km domain" read as +/-1000 km; could mean 1000 km across. Open question in STATUS.md; shape (square vs radius) is for the spec

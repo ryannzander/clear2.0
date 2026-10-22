@@ -1,0 +1,19 @@
+# Provenance of every raw dataset. One entry per dataset, appended by /ingest.
+# Raw files are gitignored; this file and their sha256 are what make them reproducible.
+# Paths are repo-relative, forward slashes. Times are UTC, ISO 8601.
+sources: []
+
+# Example entry (copy, uncomment, fill in; do not invent values):
+#
+# sources:
+#   - id: <dataset-slug>                  # = knowledge/data/<dataset-slug>.md
+#     provider: <organisation or API>
+#     url: <landing page or download URL>
+#     api_query: <exact query, parameters or request body; empty if a plain download>
+#     downloaded_utc: 2026-01-01T00:00:00Z
+#     license: <license name or terms URL>
+#     redistribution_allowed: false       # true | false | unknown
+#     files:
+#       - path: data/raw/<file name>
+#         sha256: <64 hex chars>
+#     notes: <anything a re-downloader needs: tool version, filters, known gaps>

@@ -1,0 +1,48 @@
+# CI on every push to main (no PRs: agents commit directly; pre-commit already ran locally).
+# Standard: docs/standards/git.md
+name: ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install (core + dev only; geo/knowledge are local-only)
+        run: uv sync --locked --group dev
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format
+        run: uv run ruff format --check .
+
+      - name: Types
+        run: uv run pyright
+
+      - name: Tests
+        run: uv run pytest -q
+
+      - name: Guard tracked files
+        run: uv run python scripts/guard_commit.py --all-files
+
+      - name: Maps
+        run: uv run python scripts/check_maps.py --ci

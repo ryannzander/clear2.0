@@ -1,0 +1,52 @@
+# --- Originals and data: never in git (backed up to the Seagate drive) ---
+# data/raw and data/prior are junctions to other drives (scripts/storage.py), so no
+# trailing slash: git may see a junction as a link, not a folder.
+/archive/
+/data/raw
+/data/prior
+/data/interim/
+/data/processed/
+/data/features/
+/inbox/*
+!/inbox/README.md
+/CLEAR 2.0 (misc docs)/
+/RAW Data/
+# One row per original file (~175k rows): local only. inventory-summary.csv is committed.
+/manifests/inventory.csv
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.pyright/
+*.egg-info/
+build/
+dist/
+
+# --- Notebooks: only the jupytext .py pair is committed ---
+*.ipynb
+.ipynb_checkpoints/
+
+# --- Experiment tracking (local MLflow) ---
+mlruns/
+mlartifacts/
+
+# --- Review records (local; checked by pre-commit) ---
+/.review/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+.cdsapirc
+
+# --- OS junk ---
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# --- Claude local overrides ---
+.claude/settings.local.json

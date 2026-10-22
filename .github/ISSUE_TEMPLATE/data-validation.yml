@@ -1,0 +1,41 @@
+name: Data validation
+description: Check one dataset against what a spec requires. The Data Steward picks it up with /validate-data.
+title: "[DATA] "
+labels: ["data-validation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The report goes to `knowledge/data/<dataset-slug>.validation.md` and updates the data card.
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset slug
+      description: Slug of the data card in `knowledge/data/`.
+      placeholder: <dataset-slug>
+    validations:
+      required: true
+  - type: textarea
+    id: spec_requirement
+    attributes:
+      label: Spec requirement
+      description: What the spec needs from this dataset, with the section link.
+      placeholder: "methodology/<slug>.md#<anchor> — <requirement>"
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Checks
+      description: What to test. Examples are coverage, gaps, units, time convention, duplicates, range.
+      placeholder: |
+        - Time coverage meets the spec window
+        - Missing-hour rate per station
+        - Units and time convention match the data card
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Known quirks, related issues, or ADRs.

@@ -1,0 +1,12 @@
+# scripts/
+
+Repo tooling (not research code). Stdlib + pyyaml, run as `uv run python scripts/<x>.py`.
+Every script takes `--root PATH` (default: this repo) and `--help`.
+
+- [storage.py](storage.py) — links `data/raw` and `data/prior` to the drives named in `.env`; reports each link and backup folder as online/OFFLINE with free GB · bare run = status, exit 1 if a store is offline or not linked · `link` creates missing links, `link --relink` re-points a changed target · `verify [--folder X]` hashes the Seagate backup copies of inventory rows against `inventory.csv` (backup files missing from the inventory are not checked) · never moves or deletes data
+- [inventory.py](inventory.py) — scans archive/, data/raw/, data/prior/, inbox/ + legacy folders → `manifests/inventory.csv` (local only, Grep-able), `manifests/inventory-summary.csv` (committed, one row per dataset folder) and `knowledge/_sources.json` · `--check` exits 1 if out of date · hashes are cached by size + mtime · an offline link keeps its old rows and warns
+- [intake.py](intake.py) — `plan [--legacy]` writes `inbox/_plan.yaml`; `apply <plan>` moves files into archive/ / data/raw/ (across drives: copy, hash the copy, compare, then delete the source; a mismatch deletes the copy and keeps the source) · refuses an offline destination, `..` segments and duplicate `src` · logged to `manifests/intake-log.csv` · the only sanctioned writer into originals
+- [check_maps.py](check_maps.py) — full run fails on unmapped/stale/junk originals (`data/prior` included; one line per status and dataset folder; walks every original, data drives must be online; run by `/map-refresh`) plus size budgets, broken ADR links, missing repo-map files, missing mirror frontmatter · `--ci` (pre-commit + CI) checks only those last four
+- [guard_commit.py](guard_commit.py) — pre-commit + CI guard: blocks originals, data, `*.ipynb`, files > 1 MB and secret-looking strings from being committed
+- [check_review.py](check_review.py) — `record` writes `.review/last.json` for the staged diff after `/review`; `check` (pre-commit) requires a passing review for gated paths (`GATED`: research code/specs plus the tooling, tests, hooks, review skill/agent, CI, pre-commit, ignore files and pyproject; never `INDEX.md`; renames = delete + add) · bypass: `CLEAR_SKIP_REVIEW=1` (Ryan only; the guard hook blocks agents)
+- [_common.py](_common.py) — shared helpers for inventory/intake/check_maps (areas, kinds, hashing, slugify, frontmatter)

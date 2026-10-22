@@ -1,0 +1,59 @@
+# Runs on every commit (direct-to-main, so this is the safety net). Install once:
+#   uv run pre-commit install
+# Standard: docs/standards/git.md
+exclude: ^(archive/|data/raw|data/prior|CLEAR 2\.0 \(misc docs\)/|RAW Data/)
+# `uv run pre-commit install` installs both git hooks; every hook below runs at
+# pre-commit unless it names another stage.
+default_install_hook_types: [pre-commit, commit-msg]
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+      # Generated figures and verbatim mirrors keep their exact bytes.
+      - id: end-of-file-fixer
+        exclude: ^(figures/out/|knowledge/)
+      - id: trailing-whitespace
+        exclude: ^(figures/out/|knowledge/)
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1  # keep equal to the ruff version in uv.lock
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: guard-commit
+        name: guard (originals, data, notebooks, >1 MB, secrets)
+        entry: uv run python scripts/guard_commit.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      # Fast mode (<1 s): budgets, links, INDEX presence. The full check walks every
+      # original (~26 s at 62k files) and runs in /map-refresh, the only place originals change.
+      - id: check-maps
+        name: maps (size budgets, ADR links, INDEX files)
+        entry: uv run python scripts/check_maps.py --ci
+        language: system
+        pass_filenames: false
+        always_run: true
+      # AGENTS.md rule 10: no Co-Authored-By / "Generated with" AI attribution.
+      - id: no-ai-attribution
+        name: commit message has no AI attribution
+        entry: uv run python scripts/guard_commit.py --commit-msg
+        language: system
+        stages: [commit-msg]
+      # Last, so formatters above have already settled the staged diff.
+      - id: check-review
+        name: review gate (gated paths need a passing /review)
+        entry: uv run python scripts/check_review.py check
+        language: system
+        pass_filenames: false
+        always_run: true

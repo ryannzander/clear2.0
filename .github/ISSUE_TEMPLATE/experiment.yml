@@ -1,0 +1,51 @@
+name: Experiment
+description: A run that tests one hypothesis. The Experimenter picks it up with /experiment.
+title: "[EXP] "
+labels: ["experiment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One hypothesis per issue. The result lands in `research/experiments/EXP-NNN-slug/README.md`.
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: One falsifiable sentence. Name the metric and the comparison.
+      placeholder: "Adding <feature> lowers <metric> against <baseline>."
+    validations:
+      required: true
+  - type: input
+    id: spec
+    attributes:
+      label: Spec
+      description: Spec section this tests, as `methodology/<slug>.md#<anchor>`.
+      placeholder: methodology/<slug>.md#<anchor>
+    validations:
+      required: true
+  - type: textarea
+    id: datasets
+    attributes:
+      label: Dataset(s)
+      description: Dataset slugs from `knowledge/data/INDEX.md`, one per line.
+      placeholder: <dataset-slug>
+    validations:
+      required: true
+  - type: textarea
+    id: success_metric
+    attributes:
+      label: Success metric
+      description: Metric, split, and the threshold or baseline that counts as success.
+    validations:
+      required: true
+  - type: input
+    id: config
+    attributes:
+      label: Config
+      description: Config file and keys that hold this run's constants.
+      placeholder: config/<file>.yaml
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything else the Experimenter needs.
