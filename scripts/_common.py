@@ -6,9 +6,12 @@ All paths handed around between functions are repo-relative POSIX strings.
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import os
 import re
+import sys
+import time
 import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass
@@ -58,6 +61,9 @@ INVENTORY_COLUMNS: tuple[str, ...] = (
 
 # Read files in 1 MiB chunks so multi-GB grids hash without loading into memory.
 HASH_CHUNK_BYTES = 1024 * 1024
+# Out-of-memory while hashing: tries per file (>= 1), and the pause between tries (sha256_file).
+HASH_TRIES = 5
+HASH_RETRY_WAIT_MIN = 1
 
 ISO_UTC = "%Y-%m-%dT%H:%M:%SZ"
 
@@ -181,12 +187,47 @@ def slugify_path(rel: str) -> str:
 
 
 def sha256_file(path: Path) -> str:
-    """Stream a file through sha256."""
-    digest = hashlib.sha256()
-    with path.open("rb") as fh:
-        while chunk := fh.read(HASH_CHUNK_BYTES):
-            digest.update(chunk)
-    return digest.hexdigest()
+    """Stream a file through sha256.
+
+    Running out of memory mid-read means another program briefly used up Windows' commit
+    limit (2026-10-22: the search indexer's filter host took ~100 GB and killed an
+    inventory run). Wait ``HASH_RETRY_WAIT_MIN`` and rehash the file from the start, so an
+    hour-long inventory survives it. Worst case this blocks (HASH_TRIES - 1) waits.
+
+    Only MemoryError is retried. If Windows itself fails the read for lack of memory, Python
+    reports ``OSError [Errno 22]`` with no ``winerror``, which looks like any other bad read,
+    so it is raised at once rather than guessed at.
+
+    Raises
+    ------
+    MemoryError
+        Still out of memory after ``HASH_TRIES`` tries.
+    OSError
+        Any read error, at once.
+    """
+    for attempt in range(1, HASH_TRIES + 1):
+        try:
+            digest = hashlib.sha256()
+            with path.open("rb") as fh:
+                while chunk := fh.read(HASH_CHUNK_BYTES):
+                    digest.update(chunk)
+            return digest.hexdigest()
+        except MemoryError:
+            if attempt == HASH_TRIES:
+                raise
+            _warn_out_of_memory(path, attempt)
+            time.sleep(HASH_RETRY_WAIT_MIN * 60)
+    raise AssertionError("unreachable")
+
+
+def _warn_out_of_memory(path: Path, attempt: int) -> None:
+    """Tell the CLI user a hash is being retried; never fail the retry over the message."""
+    with contextlib.suppress(MemoryError):
+        print(
+            f"sha256: out of memory reading {path}; retry {attempt}/{HASH_TRIES - 1} "
+            f"in {HASH_RETRY_WAIT_MIN} min",
+            file=sys.stderr,
+        )
 
 
 def sha256_path(path: Path) -> str:
