@@ -1,0 +1,74 @@
+folder,area,files,bytes,mapped,unmapped,stale,superseded,junk
+CLEAR 2.0 (misc docs),legacy,2,8192,0,0,0,0,2
+CLEAR 2.0 (misc docs)/CAYIA Innovation Contest,legacy,217,1679608493,0,105,0,0,112
+CLEAR 2.0 (misc docs)/Conrad,legacy,28,10518115,0,12,0,0,16
+CLEAR 2.0 (misc docs)/Documents,legacy,800,611715528,0,377,0,0,423
+CLEAR 2.0 (misc docs)/Pitches,legacy,188,321155541,0,87,0,0,101
+RAW Data,legacy,9,351512,0,2,0,0,7
+RAW Data/AB Provincial - Hourly PM2.5 2000-2025,legacy,30,547094251,0,30,0,0,0
+RAW Data/BCProvincial,legacy,35,95645187,0,35,0,0,0
+RAW Data/CWFIS Fire M3,legacy,34,874672293,0,17,0,0,17
+RAW Data/Canada NAPS Hourly PM2.5 2000-2024 (whole year),legacy,61,316602205,0,30,0,0,31
+RAW Data/EPA - USA Hourly PM25 2000-2026,legacy,84,27898843520,0,40,0,0,44
+RAW Data/FIRMS,legacy,6,35858651,0,3,0,0,3
+RAW Data/Firework,legacy,4482,53885989684,0,2924,0,0,1558
+RAW Data/MB Provincial - Hourly PM2.5 2000-2025,legacy,324,168390613,0,324,0,0,0
+RAW Data/NB Provincial - Hourly PM2.5 2000-2025,legacy,23,14316177,0,23,0,0,0
+RAW Data/NOAA,legacy,54922,74238486049,0,48793,0,0,6129
+RAW Data/NS Provincial - Hourly PM2.5 2000-2025,legacy,16,90089206,0,16,0,0,0
+RAW Data/NT Provincial - Hourly PM2.5 2000-2025,legacy,212,77716517,0,212,0,0,0
+RAW Data/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year),legacy,61,63699886,0,29,0,0,32
+RAW Data/PurpleAir 2021-2025,legacy,6,2471937464,0,5,0,0,1
+RAW Data/QC Provincial - Hourly PM2.5 2000-2025,legacy,38,1166128598,0,31,0,0,7
+RAW Data/Reference boundaries (Natural Earth),legacy,2,2361945,0,1,0,0,1
+RAW Data/SK Provincial - Hourly PM2.5 2000-2025,legacy,17,217402366,0,17,0,0,0
+RAW Data/Sentinel-5P TROPOMI AAI,legacy,185,975318191,0,90,0,0,95
+RAW Data/Sentinel-5P TROPOMI AAI 34N,legacy,182,1105670986,0,90,0,0,92
+RAW Data/era5_blh,legacy,8,1611003640,0,8,0,0,0
+RAW Data/era5_upper_wind,legacy,96,5678894855,0,96,0,0,0
+RAW Data/era5_wind,legacy,9,3251109474,0,9,0,0,0
+data/prior,prior,32,299922,0,2,0,0,30
+data/prior/analysis,prior,500,6277278839,0,234,0,0,266
+data/prior/aqm_pm25_forecast_cells,prior,4908,8908416993,0,2454,0,0,2454
+data/prior/bluesky_cells_csg1,prior,62,8236212077,0,31,0,0,31
+data/prior/bluesky_cells_inner01,prior,62,2390716372,0,31,0,0,31
+data/prior/cwfis_m3,prior,4,150690491,0,2,0,0,2
+data/prior/dashboard_june2023,prior,90,19383609,0,40,0,0,50
+data/prior/era5_cells,prior,132,4351751545,0,66,0,0,66
+data/prior/era5_cells_extended,prior,132,5029356872,0,66,0,0,66
+data/prior/era5_cells_rest,prior,132,4134261632,0,66,0,0,66
+data/prior/era5_cells_rest2000,prior,132,476447976,0,66,0,0,66
+data/prior/era5_cells_west,prior,132,3496461521,0,66,0,0,66
+data/prior/era5_hum_cells,prior,132,4764757447,0,66,0,0,66
+data/prior/era5land_cells_all01,prior,62,57336003885,0,31,0,0,31
+data/prior/era5land_cells_csg1,prior,62,1500295469,0,31,0,0,31
+data/prior/era5land_cells_inner01,prior,62,706461969,0,31,0,0,31
+data/prior/features,prior,250,8130076672,0,124,0,0,126
+data/prior/firms,prior,2545,1188868259,0,1271,0,0,1274
+data/prior/grid_template,prior,33,11793781,0,16,0,0,17
+data/prior/hourly_by_source,prior,258,1257615411,0,123,0,0,135
+data/prior/hrrr_alaska_smoke_cells,prior,4218,3813712459,0,2109,0,0,2109
+data/prior/hrrr_smoke_forecast_cells,prior,4218,5007453735,0,2109,0,0,2109
+data/prior/hrrr_smoke_forecast_cells_band2000,prior,4218,1933700278,0,2109,0,0,2109
+data/prior/master,prior,4,250858715,0,2,0,0,2
+data/prior/models,prior,201,374950531,0,95,0,0,106
+data/prior/plume_analysis,prior,11023,69557296,0,4899,0,0,6124
+data/prior/rap_smoke_cells,prior,3988,2414538488,0,1994,0,0,1994
+data/prior/stations,prior,52,797230,0,26,0,0,26
+data/prior/training,prior,25,7193964960,0,12,0,0,13
+data/raw,raw,1,9563,0,1,0,0,0
+data/raw/AirNow,raw,194,768821566,0,194,0,0,0
+data/raw/BlueSky Canada (UBC),raw,3558,296625625747,0,3558,0,0,0
+data/raw/CAMS global forecasts,raw,147,14782691819,0,147,0,0,0
+data/raw/CWFIS Fire M3,raw,17,874602661,0,17,0,0,0
+data/raw/Canada Government Monitors,raw,193,3420918633,0,193,0,0,0
+data/raw/EPA - USA Hourly PM25 2000-2026,raw,120,46755566417,0,120,0,0,0
+data/raw/FIRMS,raw,4,35850824,0,4,0,0,0
+data/raw/Firework,raw,2924,53879606064,0,2924,0,0,0
+data/raw/NOAA,raw,143009,333207447843,0,143009,0,0,0
+data/raw/PurpleAir,raw,3741,3403556904,0,3741,0,0,0
+data/raw/Reference boundaries (Natural Earth),raw,3,6280065,0,3,0,0,0
+data/raw/Sentinel-5P TROPOMI,raw,503,2742159067,0,503,0,0,0
+data/raw/era5_land_wind,raw,90,28210751687,0,90,0,0,0
+data/raw/era5_wind,raw,585,166528514640,0,585,0,0,0
+inbox/seagate,inbox,805,987971550,0,805,0,0,0
