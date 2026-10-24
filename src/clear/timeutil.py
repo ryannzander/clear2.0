@@ -2,12 +2,11 @@
 
 Rule (docs/standards/naming-units-time.md#time-rules): every stored timestamp is tz-aware
 UTC in a column named ``time_utc``. Hourly values are labelled by the START of their hour
-(hour-beginning); this label is PROVISIONAL, an open question for Ryan (STATUS.md, "Open
-questions"; docs/standards/naming-units-time.md#hour-labelling) to be settled by a Phase 2
-ADR. Sources differ: some report local standard time all year, some local clock time with
-DST, some label hours by their END. Each source's convention is verified and written in its
-data card (``knowledge/data/<dataset>.md``, field ``time_convention``) before ingest code
-calls :func:`to_utc` with the matching arguments. Never guess a convention here.
+(hour-beginning; decisions/0005-time-utc-hour-beginning.md). Sources differ: some report
+local standard time all year, some local clock time with DST, some label hours by their END.
+Each source's convention is verified and written in its data card
+(``knowledge/data/<dataset>.md``, field ``time_convention``) before ingest code calls
+:func:`to_utc` with the matching arguments. Never guess a convention here.
 """
 
 from typing import Literal
@@ -49,13 +48,11 @@ def to_utc(
     ambiguous: Literal["raise", "infer", "NaT"] = "raise",
     nonexistent: Literal["raise", "NaT"] = "raise",
 ) -> "pd.Series[pd.Timestamp]":
-    """Convert naive source timestamps to tz-aware UTC, hour-beginning (PROVISIONAL).
+    """Convert naive source timestamps to tz-aware UTC, hour-beginning.
 
     Method: docs/standards/naming-units-time.md#hour-labelling
 
-    Hour-beginning output is the PROVISIONAL ``time_utc`` convention (open question for
-    Ryan in STATUS.md); if the Phase 2 ADR picks hour-ending, ``hour_ending`` handling
-    here changes with it.
+    Hour-beginning output is the ``time_utc`` convention (ADR 0005).
 
     Parameters
     ----------

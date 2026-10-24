@@ -119,7 +119,11 @@ One entry per raw dataset. Committed. Values below are placeholders.
 
 ## Validation reports
 
-Specs define what "valid" means, so the validate step follows the spec step. `/validate-data`
+Specs define what "valid" means, so the validate step follows the spec step.
+
+A phase may read a spatial subset of a dataset (its read scope, stated in the spec). Interim
+is then lossless within that scope: every row and value inside it is kept; the scope itself
+is the only filter, and widening it is a re-read, not a methodology change. `/validate-data`
 checks a dataset against its spec and writes the result.
 
 - Report: `knowledge/data/<dataset-slug>.validation.md`. Contents: spec section checked,

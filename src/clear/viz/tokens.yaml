@@ -58,6 +58,7 @@ sources:
   purpleair: "#CC79A7"  # PurpleAir low-cost sensors
   satellite: "#D55E00"  # satellite fire/smoke/AOD products (hms_smoke, firms, aod) as one family
   era5: "#E69F00"       # ERA5 reanalysis (wind)
+  airnow: "#882255"     # US EPA AirNow (Paul Tol "wine": Okabe-Ito has no free hue left)
 
 source_labels:
   naps: NAPS
@@ -66,10 +67,12 @@ source_labels:
   purpleair: PurpleAir
   satellite: Satellite
   era5: ERA5
+  airnow: AirNow
 
 # --- Sequential colormaps (matplotlib names) -----------------------------------
 sequential:
   pm25: cividis   # continuous PM2.5; breakpoints at the alert thresholds from config/
+  fraction: cividis  # 0-1 shares such as data completeness (not a concentration)
 
 # --- Neutrals -----------------------------------------------------------------
 neutrals:

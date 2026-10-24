@@ -6,7 +6,8 @@ or ADR. Changing a value here is a gated change (needs `/review`).
 
 Line format: `- [file.yaml](file.yaml) — what it holds · spec it serves · status`.
 
-Each file appears when a spec in Phase 2 names constants, and is listed here with the
-spec it serves.
+Each file appears when a spec names constants, and is listed here with the spec it serves.
 
-- [grid.yaml](grid.yaml) — study domain centre + half-width (map extents) · `methodology/grid.md` (not yet written) · PROVISIONAL
+- [grid.yaml](grid.yaml) — `toronto_grid` (0.1° cells, Toronto-cell rule; ADR 0006) + study `domain` (map extents) · `methodology/grid.md` · domain PROVISIONAL (Phase 2)
+- [stations.yaml](stations.yaml) — sources (folders, clock, sentinels), QC, priority, overlap mode, crosswalk, completeness · `methodology/stations.md` · ADRs 0003–0005, 0007, 0008
+- [splits.yaml](splits.yaml) — train 2021–24 / val 2025 / test 2026 · `methodology/stations.md` · ADR 0001

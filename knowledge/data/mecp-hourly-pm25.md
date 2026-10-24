@@ -14,8 +14,8 @@ time_coverage: 2003-01-01T05:00:00Z/2026-01-01T05:00:00Z   # dates 2003-01-01..2
 time_convention: EST (UTC-5) all year, no DST (file header); hour-ending H01-H24 by observed match with NAPS (not stated by the provider)
 spatial_coverage: Ontario, 58 station codes (57 with data); 6 Toronto codes
 rows: 324867                      # station-day rows: 324,860 complete + 7 truncated
-validation: unvalidated
-validation_report: null
+validation: partial
+validation_report: knowledge/data/mecp-hourly-pm25.validation.md
 ---
 
 # mecp-hourly-pm25
@@ -96,4 +96,4 @@ data that year has `No data available` instead of rows (40 station-years).
   covers the site's real-time pages.
 
 ## Validation
-`unvalidated` — no report yet (needs `methodology/stations.md`). 2026-10-24.
+`partial` — [mecp-hourly-pm25.validation.md](mecp-hourly-pm25.validation.md), 2026-10-24.

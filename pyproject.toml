@@ -16,6 +16,7 @@ dependencies = [
     "typer>=0.12",
     "matplotlib>=3.9",
     "plotly>=5.22",
+    "shapely>=2.0",  # point-in-City and cell overlap (clear.stations, clear.grid); CI has no geo group
 ]
 
 [project.scripts]
@@ -103,3 +104,4 @@ venv = ".venv"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --import-mode=importlib"
+markers = ["golden: reproduces numbers from old docs; needs local data/ (skips in CI)"]

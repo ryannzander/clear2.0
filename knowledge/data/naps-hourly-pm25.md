@@ -14,8 +14,8 @@ time_coverage: 2000-01-01T05:00:00Z/2025-01-01T05:00:00Z   # Ontario stations (U
 time_convention: local standard time all year (no DST; Ontario = UTC-5); hour-ending (H01 = hour ending 01:00 LST, H24 = hour ending 24:00 LST)
 spatial_coverage: Canada, 358 NAPS IDs in 13 provinces/territories; 70 in ON; 13 with City = "Toronto"
 rows: 1871603                     # station-day rows (one per NAPS ID x method code x date), 25 yearly CSVs
-validation: unvalidated
-validation_report: null
+validation: partial
+validation_report: knowledge/data/naps-hourly-pm25.validation.md
 ---
 
 # naps-hourly-pm25
@@ -88,4 +88,4 @@ header on line 8; bilingual names `English//French`. Wide: one column per hour.
 - The derived xlsx drop the leading zero of the NAPS ID (`60410`); join on the CSV IDs.
 
 ## Validation
-`unvalidated` — no report yet (needs `methodology/stations.md`). 2026-10-24.
+`partial` (Phase 1 read box only) — [naps-hourly-pm25.validation.md](naps-hourly-pm25.validation.md), 2026-10-24.

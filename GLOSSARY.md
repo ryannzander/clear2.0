@@ -6,8 +6,8 @@ and file names; never a name from **Avoid**. Format and rules:
 [docs/standards/naming-units-time.md](docs/standards/naming-units-time.md).
 
 - `<verify>` = not yet confirmed against the provider's documentation.
-- `<defined in methodology/<slug>.md — Phase 2>` = CLEAR-specific; the spec supplies the
-  definition. Spec slugs are provisional (see `STATUS.md`); code names for these terms are
+- `<defined in methodology/<slug>.md>` = CLEAR-specific; the spec supplies the
+  definition when its phase is built. Spec slugs are provisional (see `STATUS.md`); code names for these terms are
   provisional until the spec lands.
 
 ## External terms and sources
@@ -36,22 +36,27 @@ and file names; never a name from **Avoid**. Format and rules:
 
 | Term | Canonical code name | Definition | Units | Avoid |
 |---|---|---|---|---|
-| station | `station_id` | A fixed location where one source measures one or more parameters. ID format `<source>:<id>` is PROVISIONAL. | — | `site_id`, `monitor_id` |
+| station | `station_id` | One monitor of one source, `<source>:<provider id>` with leading zeros kept (`naps:060410`, `mecp:33003`, `airnow:000060410`); methodology/stations.md. | — | `monitor_id` |
+| site | `site_id` | One physical location: stations of any source within 500 m (ADR 0008), named by the `station_id` of its highest-priority member. | — | `location_id` |
+| completeness | `present_frac` | Fraction of hours in a period with a valid value; flagged at 0.75 (ADR 0004). | fraction | `completeness_pct` |
 | hourly mean | `hourly_mean` | Mean of the readings inside one clock hour, labelled by the time convention. The minimum-valid-reading rule comes from the spec. | as the variable | `hourly_avg`, `hr_avg` |
-| time_utc | `time_utc` | tz-aware UTC timestamp. Hourly tables: start of the hour (PROVISIONAL, see naming-units-time.md). | UTC | `datetime`, `timestamp`, `date`, `time_local` |
+| time_utc | `time_utc` | tz-aware UTC timestamp. Hourly tables: start of the hour (ADR 0005). | UTC | `datetime`, `timestamp`, `date`, `time_local` |
 | wind speed | `wind_speed_ms` | Magnitude of the horizontal wind vector. | m/s | `ws`, `wind_mps`, `wind_kmh` |
+| bytes (unit suffix) | `_bytes` | Suffix for sizes in bytes, e.g. `size_bytes`; see naming-units-time.md. | B | `_b`, `_size` |
+| seconds (unit suffix) | `_s` | Suffix for durations in seconds, e.g. a network timeout `_TIMEOUT_S`; see naming-units-time.md. | s | `_sec`, `_secs`; `_ms` (that is metres per second) |
 | prior outputs | `data/prior` | Old pipeline outputs from earlier CLEAR work (per-cell extracts, features, training sets, models); reference and golden numbers only, not a pipeline input. | — | `cleaned_data`, `cleaned data` as a code name |
 
 ## CLEAR-specific terms
 
 | Term | Canonical code name | Definition | Units | Avoid |
 |---|---|---|---|---|
-| alert level | `alert_level` | `<defined in methodology/alert-levels.md — Phase 2>` | — | — |
-| bad-air day | `bad_air_day` | `<defined in methodology/bad-air-events.md — Phase 2>` | — | — |
-| event cluster | `event_cluster` | `<defined in methodology/bad-air-events.md — Phase 2>` | — | — |
-| lag time | `lag_h` | `<defined in methodology/lag-plume.md — Phase 2>` | h | `lag` without a unit |
-| smoke plume | `smoke_plume` | `<defined in methodology/lag-plume.md — Phase 2>` | — | — |
-| grid | `grid` | `<defined in methodology/grid.md — Phase 2>` | — | — |
-| dynamic grid | `dynamic_grid` | `<defined in methodology/grid.md — Phase 2>` | — | — |
-| domain | `domain` | `<defined in methodology/grid.md — Phase 2>` | — | — |
-| target series | `target_series` | `<defined in methodology/target-pm25.md — Phase 2>` | — | — |
+| alert level | `alert_level` | `<defined in methodology/alert-levels.md>` | — | — |
+| bad-air day | `bad_air_day` | `<defined in methodology/bad-air-events.md>` | — | — |
+| event cluster | `event_cluster` | `<defined in methodology/bad-air-events.md>` | — | — |
+| lag time | `lag_h` | `<defined in methodology/lag-plume.md>` | h | `lag` without a unit |
+| smoke plume | `smoke_plume` | `<defined in methodology/lag-plume.md>` | — | — |
+| grid | `grid` | Cells of fixed size in degrees with edges on multiples of the size, over Toronto (Phase 1: 0.1°, methodology/grid.md). | — | — |
+| cell | `cell_id` | One grid cell, named by its south-west corner in hundredths of a degree, e.g. `N4360W07940`. | — | `cell_name`, `tile` |
+| dynamic grid | `dynamic_grid` | `<defined in methodology/grid.md>` | — | — |
+| domain | `domain` | `<defined in methodology/grid.md>` | — | — |
+| target series | `target_series` | `<defined in methodology/target-pm25.md>` | — | — |

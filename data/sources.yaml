@@ -1,7 +1,620 @@
 # Provenance of every raw dataset. One entry per dataset, appended by /ingest.
 # Raw files are gitignored; this file and their sha256 are what make them reproducible.
 # Paths are repo-relative, forward slashes. Times are UTC, ISO 8601.
-sources: []
+sources:
+- id: naps-hourly-pm25
+  provider: Environment and Climate Change Canada (ECCC), National Air Pollution Surveillance (NAPS) Program
+  url: unknown
+  api_query: unknown
+  downloaded_utc: unknown
+  license: Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada),
+    per the NAPS record open.canada.ca dataset 1b36a356-defd-4813-acea-47bc3abd859b
+  redistribution_allowed: true
+  files:
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/.claude/settings.local.json
+    sha256: 1c73944317568684fb7282d4f5f08046edf30fffcbea8ba21ac1088fe486fefc
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/NAPS_Ontario_PM25_2000-2024.xlsx
+    sha256: ae08b12244244f95f2aa43225c0fb74edd8cb755dd2b9ba45a43b49e9bd76473
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/NAPS_Ontario_PM25_2000-2024_Summary.docx
+    sha256: 8783daa36ee4c862bb0b70f41d6c9b94641877a01f54492c657e08d9da49bb58
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/NAPS_Quebec_PM25_2000-2024.xlsx
+    sha256: 11d7a93fc788211d03945c6856ebff1424d8361eb6efe399390bbabc4dead916
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/NAPS_Quebec_PM25_2000-2024_Summary.docx
+    sha256: 1ea39940e5653595a3239b871fcce644c59277057d8ed1e915c9c9c51eb5168e
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2000.csv
+    sha256: 942e16122f7a1b2c82d6c656b91ac393c6f6e8978d006fa53f5d90e8e9d221ec
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2001.csv
+    sha256: 48e7ab02938cefc931509332dc69648938ed1ad3124d86c534ad0991a5cd07df
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2002.csv
+    sha256: a086437f8adac27a1e159b8266b1d9b0ecf8d8ca905809909eeff2a3b15d739e
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2003.csv
+    sha256: 7f1146d058b82916e97246e7c2f28c3220d838149749a0b688f74afea7bf4533
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2004.csv
+    sha256: f023ac6073125e870e7b701cbf7d1f90d03e1d92f08fab83542c8f32ab95a8f0
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2005.csv
+    sha256: 80c544c056d5492bb504df1177af041fafe3dd2f23cb7a25493acbb8273926f1
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2006.csv
+    sha256: 854d0422813da4dbca37e2418e97d451e3d57bac712c2e0088a028753162a9bb
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2007.csv
+    sha256: 3ee00ac25c98e06e0c50731d270ac62d1022cfa20ffbbc2871d1f53e7b4069f4
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2008-2.csv
+    sha256: 44654e6eaca2d1d034cde3461ee1ff39ded951bbfe075c11e4a8a065313f427a
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2009-2.csv
+    sha256: 9f894d22082c78be6251e634b312f6a1effee65f7c675e29f70fd2125aa40eef
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2010.csv
+    sha256: 45ac1db56a29a46e9abb9c0d5c459c544077ef7025b4ad0ab041edf925c43f90
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2011.csv
+    sha256: f29251c7cd7a9aa3d7d76c578b149e1eb25b5c48cd21638610d248175126641e
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2012.csv
+    sha256: 965b251a3d4e8155cc99c290f508d0ece9ae3a4675be871156152eeccf135f30
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2013.csv
+    sha256: 89cba4c4728768c013d0f30f69956ce6c1125c385ed3a7a6932213faa9c8066b
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2014.csv
+    sha256: deef809d68294d42cb969e11acedcf9b430a9ee3de0001d26ce00d31b0bc0425
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2015.csv
+    sha256: 993a5420c936db2fa9ffec6a6056d4446d9f3ed5d69abcef676b622d0b7d8690
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2016.csv
+    sha256: 0a8c0f5726adf6ca067a889c80308c16be91f22b11bf369a5fc414644a23f25a
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2017.csv
+    sha256: 8e614084f95bd1f7e1f9b0078689c42672e03ac7c4071cc05210e25225f0aa36
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2018.csv
+    sha256: 0a332954d6d065edd5a80ab880a046b0bd977108a516ee85eb3ee6700ef9c8b8
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2019-2.csv
+    sha256: 384068e79326c036f6ba25d841a500354d759155654bf4a4e165da3c092d330c
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2020-2.csv
+    sha256: 737745d6bf5a869192869a7522bf14b94b49826f4619c3b8cb817970f6f15faf
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2021-2.csv
+    sha256: b05f0f5eac83c3ea6efbf0587c4e9d30c5795981c47611da521da28123d17d52
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2022-2.csv
+    sha256: 7414b3b7bb78c3d2fd2788e5fc421e724433f34f1a98e49283e59e2e138318cd
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2023-2.csv
+    sha256: 9d87fd544c88bb42aa16aac092838e75bff65a624ffc670e6563a9adc036535a
+  - path: data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/PM25_2024.csv
+    sha256: b52e88c4394a339640ce4cf99e8dc9540f2a1769d80e355b0db524d4cbc1ebea
+  notes: 'Provider files are PM25_YYYY.csv (7 named PM25_YYYY-2.csv); line 1 gives the provider''s generation
+    date (2026-05-14/15 for 2000-2021, 2026-06-19 for 2022-2024). Likely origin: ECCC Data Catalogue,
+    https://data-donnees.az.ec.gc.ca/data/air/monitor/national-air-pollution-surveillance-naps-program/
+    <verify>. The two NAPS_*_PM25_2000-2024.xlsx and two *_Summary.docx are derived files made outside
+    ECCC (not OGL data); .claude/settings.local.json is a stray tool file. Card: knowledge/data/naps-hourly-pm25.md.
+    Legacy duplicate on C: (RAW Data/) kept by Ryan''s decision 2026-10-24; this entry covers the data/raw
+    copy only.'
+- id: mecp-hourly-pm25
+  provider: Ontario Ministry of the Environment, Conservation and Parks (MECP), Air Quality Ontario
+  url: https://www.airqualityontario.com/history/
+  api_query: unknown; file names suggest pollutant 124 (PM2.5), all stations, one calendar year per request
+    (YYYY-01-01 to YYYY-12-31), CSV
+  downloaded_utc: unknown
+  license: unknown; files state 'Copyright King's Printer for Ontario 2026'; no data licence found on
+    airqualityontario.com (checked 2026-10-24) <verify>
+  redistribution_allowed: unknown
+  files:
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/.claude/settings.local.json
+    sha256: f3c687bdabfb4685b6c5191873dcd121d261c98fac2f4abe6ee691c675f4ab9e
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2000-01-01_2000-12-31.csv
+    sha256: 7b06acd86d33c4b5a2e4ab7504fab12052c52677ba66d99a0a3a9fe14d3bcdc8
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2001-01-01_2001-12-31.csv
+    sha256: 6f7ff30439dd3430763cf978e6434c1fc98789993ea062b618dcecdb77d27174
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2002-01-01_2002-12-31.csv
+    sha256: 5230011f6af4a28da049ed2f4681c6fc568ea0af9e79e330d0556a91883b949b
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2003-01-01_2003-12-31.csv
+    sha256: 0d92ea9e467e657d276c67b950a7726414abf4e9e19c34083031d10b781d6694
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2004-01-01_2004-12-31.csv
+    sha256: 89482ee1ac8827f6596f20e648f47dbf4f5cc5651c59349d735f6bfc68e50f79
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2005-01-01_2005-12-31.csv
+    sha256: 678464a7ea0896c70be353761b3e81485cd7a7aa9e5632b0f5e77caa74999fcf
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2006-01-01_2006-12-31.csv
+    sha256: 181c305d79baab6c870d41dd652072c2f52ba43fbb8bab12486f7c3a04e4b316
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2007-01-01_2007-12-31.csv
+    sha256: 39ca3f15eea2a13faafabd32a6e98a80cdbd00f7d49e5590e4dfb6e5c28c70b8
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2008-01-01_2008-12-31.csv
+    sha256: 61055571899ec1cf8ffe6f54bf339634f09bbefb6e443eed9e1293672f1c8a21
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2009-01-01_2009-12-31.csv
+    sha256: bba50d04196d564c1f0d6428ddf241c102dc7fdce8ed672191e4073b02cf8af2
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2010-01-01_2010-12-31.csv
+    sha256: 8893b407476380d63a3ab83be87d8b058ae392005f3f8e62922b030c602d4102
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2011-01-01_2011-12-31.csv
+    sha256: f08c16f641efab0efbf2d6bb3c1ee4b4ec064e8fa86588dc31c6d4155d66e3df
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2012-01-01_2012-12-31.csv
+    sha256: cf68fee351d54f76886a2d1e5da7f4c96c059213f5868f987766ae162be2678b
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2013-01-01_2013-12-31.csv
+    sha256: 7a494d8d1f0a1ba17db13c0e0d71f5eddc8429bd69f10370a1dfe56d463dc04a
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2014-01-01_2014-12-31.csv
+    sha256: 60b1dba08834115f112ce628b591c2c6424c31852638079a8681adaa7036bd5b
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2015-01-01_2015-12-31.csv
+    sha256: 6cc16d48be964c144ee96e2a5fee14b56f48b046bc70161d18e6fb5ca55630e0
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2016-01-01_2016-12-31.csv
+    sha256: e973889d108be5c4fbd2dca9c2717f09a8443cf16ac9633e886c3c54846d778c
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2017-01-01_2017-12-31.csv
+    sha256: b2e0f5188509ae640df4496c1ecf26cfc298ab7577aba109a8be9a8566579a64
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2018-01-01_2018-12-31.csv
+    sha256: d5f515902263bec048c91e780c93ac332031fa499b590ab9bc63175614b59563
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2019-01-01_2019-12-31.csv
+    sha256: adcd90e81f5436ad577bf2f4082c976d86fb58e3ae5ed529addb1053ced32228
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2020-01-01_2020-12-31.csv
+    sha256: 21e60f75de0d6ebcffaf5bd7f74c3315c839874751e3146a561d9f678c8cef4b
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2021-01-01_2021-12-31.csv
+    sha256: a4a8f0249ae897cb01f7a3309d68d1f61ab6544374255903569b6b5818be0269
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2022-01-01_2022-12-31.csv
+    sha256: 68ee7c3ba0d4f8ade2c781eb436f7c053076d81795823878cb2813e67f16868d
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2023-01-01_2023-12-31.csv
+    sha256: 86161ba1f5135475cdbcfbeab8409886d9429b944b84cf391bd3dfa6f8b99920
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2024-01-01_2024-12-31.csv
+    sha256: be25683ab26120ab6967708813e59f6c09a21bfb8b38c9a30964e66a9cc0512b
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual
+      yearly spreadsheets/f44f4i8mr66g718tcn1icqnvah2_124_2025-01-01_2025-12-31.csv
+    sha256: db200ca957cdb541033fcd44871e810988cc4d62b475a375b08bb99e92a19ebd
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/ON_Hourly_PM2.5_2000-2025_Combined.xlsx
+    sha256: 2c4acfe87dcf6e8a183d1c1f5ac4b8bbe44b2bb212f778a8ac7bb7f5da0398a8
+  - path: data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Ontario_PM2.5_Summary_Report.docx
+    sha256: 8a296135584e99a7e3cd8bad375380585dfdb23c94b5d5e618acb13cd4f220d6
+  notes: '26 yearly CSVs 2000-2025 under ''Individual yearly spreadsheets/''; 2000-2002 hold no station
+    data. ON_Hourly_PM2.5_2000-2025_Combined.xlsx and Ontario_PM2.5_Summary_Report.docx are derived files;
+    .claude/settings.local.json is a stray tool file. Card: knowledge/data/mecp-hourly-pm25.md. Legacy
+    duplicate on C: kept (Ryan, 2026-10-24); this entry covers the data/raw copy only.'
+- id: airnow-hourlyaqobs
+  provider: US EPA AirNow (data owned by the reporting agencies)
+  url: https://files.airnowtech.org/airnow/YYYY/YYYYMMDD/HourlyAQObs_YYYYMMDDHH.dat
+  api_query: every UTC hour 2019-05-29T00 to 2026-10-08T23; columns AQSID, SiteName, Status, Latitude,
+    Longitude, Elevation, GMTOffset, CountryCode, StateName, ValidDate, ValidTime, DataSource, PM25_AQI,
+    PM25_Measured, PM25, PM25_Unit; rows with PM25 not null and CountryCode in [US, CA]; one parquet per
+    month
+  downloaded_utc: unknown
+  license: 'AirNow Data Exchange Guidelines (https://docs.airnowapi.org/docs/DataUseGuidelines.pdf): preliminary
+    data; credit the reporting agencies and AirNow; say products use preliminary data; disseminate values
+    unaltered. No licence grant found.'
+  redistribution_allowed: unknown
+  files:
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_05.parquet
+    sha256: 6b90dd5125599721f6033e61e80f729bc1039bac25493c2a6cb7226137211d4b
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_06.parquet
+    sha256: 4083caf6a03c8d1444bb7dbea3fe808bb6e7db6e9f45e569db002ca920e7696a
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_07.parquet
+    sha256: 9d351753febd6e21b952952744e2c64ea103d7e2454fdd7cf89e4dfee5914454
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_08.parquet
+    sha256: e14bc9503ca1d554735ebb88c51251c7505bf58319c4ee5b88f78d8e8fc9faac
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_09.parquet
+    sha256: 490aeaa88d744a7b6df11846dcf1aef259816e53874dd632913489fc7d040097
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_10.parquet
+    sha256: c594a4623abb83a4539aa160e962cfba75a178037b4be3c16f13368af62ee949
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_11.parquet
+    sha256: 0434ce301b10a358d70ec1698ce353a316a384dfa1241438163fcf39de0cb1ca
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2019_12.parquet
+    sha256: 0ecbc7093a95538e8b5c24187058f02c86d9b56e133c2fb104dc9d87aacc5b9c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_01.parquet
+    sha256: f7f0e0989f859bad2e6f6707d9b87b881a6ec4e370d226dc94ca6137565f4ea0
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_02.parquet
+    sha256: 530619d4bd578552e2a21321f7a772be1929c563a7c76a3493c84388e93c6a65
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_03.parquet
+    sha256: 62facdde6342660ad46e36a2d2197abcc7707c12041ca4849e4092c5f010581c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_04.parquet
+    sha256: 1f2718ee173a8c81a0d9f478bf34b078e959cc830ed5e5efea408b2aed8611ae
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_05.parquet
+    sha256: b444945615e229fa2834370421e0fe5a01be9f6f1ec46d0b898aef155c10cae3
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_06.parquet
+    sha256: eaedac383bf9f5033f25ce57d761b62a14f0d978290a9854ef2dbeb17a02f64a
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_07.parquet
+    sha256: 2121e8d088c3297f25667fe643778a9c3bdda430ff8204649010845c3e2cb84c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_08.parquet
+    sha256: d142433423c1af324bc21967e188be6c65ff497d6ba5ffab49b903ca058d3b74
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_09.parquet
+    sha256: 66bd59d44b3ffbf5ddfdc399cf9d8848f13cb473a74c59753382b09263fb217c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_10.parquet
+    sha256: b0a1c2d6a5e930f3439e4de31e859aeb19cd5369255a10eab0f218f872926473
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_11.parquet
+    sha256: d90542932343fc1057483f4d6a8d30965191f2a26d58a882fc94d9aacd9636d9
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2020_12.parquet
+    sha256: 087a5f6ff1149375dea01279a1c555e22bbc417c4044468a5b3ab98049fa08b4
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_01.parquet
+    sha256: a558979e16fc6573350d0f7636b1918ca149d26f34f9f5e2550f4c56ecf0fa09
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_02.parquet
+    sha256: 63448b22803825559f71d9ec48dfa3a7f170531ab0519022ac4651ea16ac39fa
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_03.parquet
+    sha256: 84efe84fd4d736d5a0524cf51fc2273f54fcc8dd206c8bf8aa5f50f2f5ca56c5
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_04.parquet
+    sha256: 986af6fcf9f8ca743b97f34a4b9033a92ce28db34d6ec50b31d489ca76f37737
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_05.parquet
+    sha256: 4134864754503f7698533b3d1d3a1c1ee037140126f5bd73c9f2a489d16760b2
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_06.parquet
+    sha256: 167347fc2ce2640d18625bed171fa6b600d9f7b8f22155622a87822a18e6cc4a
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_07.parquet
+    sha256: 441e20f983f5f7d4449e5ae61337c20aba7f106eedca273b912824ab9596d7d5
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_08.parquet
+    sha256: 512d1ec0ada1bf065d9f693be7242fe84ace19cc72d257e75a57dd6d211c0afe
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_09.parquet
+    sha256: 07271c5e8b29a4a415999a5a042f023ad02a94ae2581da53f568d12e7324be28
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_10.parquet
+    sha256: 88eea8b64a3e7c0ea6975be13573f89e2add0e429c9d3fe3fb34a9fec3daf67b
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_11.parquet
+    sha256: 742ecd0f64de021e7796ec0ca813d2a4a7c6e71d50aa954c3c1737efae17e0b8
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2021_12.parquet
+    sha256: f58876be57bab1f9ac594c44e109492e6e4ad95a52812625afc7eccbd5b376fa
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_01.parquet
+    sha256: 3d4d44b909911febcb3919063652ad018ea3c9a1d3b3fb16bd77894391e104f8
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_02.parquet
+    sha256: 54fcce8a8855ec8320f5958beaf47dc2ed1268b2a9008a06c392ba526ea95133
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_03.parquet
+    sha256: 2b072d81992b10fe33dbfa10c36fc00de1d531ae6f15d35db99394a88da03db8
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_04.parquet
+    sha256: e6a81c417927a6dc878ac64fe1f17fac95f872d16cbd79f9384082a74e2092d0
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_05.parquet
+    sha256: cb778e54e750469927c46070dc75024bbfb0bf5dba1346efdac0cc9120a04446
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_06.parquet
+    sha256: 28cb03347dd10be7fa6535707929c135448234b41515b5a840330b1d982dba46
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_07.parquet
+    sha256: 3253f9d178b32e18d932a9715b00911313a6d170323703620d6de9ea737072ed
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_08.parquet
+    sha256: 37dd77ebdcb9628bf63df298964ddb6fa456e348835065c0c9e7c4545d4c4d1a
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_09.parquet
+    sha256: cb0440f2a1944a699c5b4bc322e22524a8d23364ac26be358466f12002821a2a
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_10.parquet
+    sha256: c108a2b55350f693ef6ae2766f39e7fbe1a8f1689ab5c51815fc9ee1c6f5dc0d
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_11.parquet
+    sha256: 2912c3ee51bae8e3abc18e3ccc9215a0533f5b9a2310fd07f9f684acc26f2709
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2022_12.parquet
+    sha256: bb145b7e5161302312ef5f1eb9eacf9cdf36440d1a38fa6562ea7baeead1ce4d
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_01.parquet
+    sha256: fd46a05eb1ab2a47ea0eacae0c24d37eee1d4cf5df977f28894ac3d425e6a2f5
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_02.parquet
+    sha256: f1c8946ce6ca9f1b0be7156a6808c97dd37e3a1bafa6436e34e996718debee42
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_03.parquet
+    sha256: 66df7832c452976d85729e025661a20108bb71565b741a86abe4d8c867fdeb4c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_04.parquet
+    sha256: d45e6a5c9cffca3547a3fa85476c25cd30d0ad6c77954dd72cce42f823ce1b7e
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_05.parquet
+    sha256: 987ee3ad8a34669b6f0d75913252f03183f6587b72667e385432c2001e51cc02
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_06.parquet
+    sha256: 07db13b1cce28f7d402459c4df4b6b78e8653ea39b9de5b63c836c0ad0fce5ce
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_07.parquet
+    sha256: cf011781e5d029183799e0c835a782d0e9164ecc8c1be7c2717eefe20fded531
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_08.parquet
+    sha256: 412d83dda30e45826d1c6106a000a817e752427be45f104f576037770aff21b2
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_09.parquet
+    sha256: bca059eb096a1f824bbc8e4a39fc58d225e6733a5dee6d21181462ddf287c5ff
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_10.parquet
+    sha256: eddf58a0fb4f6358d84442cb0e5d485767ba73557001e2002340e0f7f0f600a2
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_11.parquet
+    sha256: 2a9bec220b83656bb503270dd16eb4818aab18b05a550b541d8ac1dfd45d1bc4
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2023_12.parquet
+    sha256: 7a9889562cbef7ae3a30295e7a7b347ccbc9159a928cc712c7a23388abcaae9c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_01.parquet
+    sha256: 07f4531bee90033a2c47b9489063c1f0b88cbc0095b17f60959e545ae1d8dd06
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_02.parquet
+    sha256: ae14280cba9acec20f4c3a25cdc35b167f1117e06b81ceef00f2a451cae18fcb
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_03.parquet
+    sha256: e72f942bcaf15d9447850a7d210a8c11d64d6b1b9e1a56d10cc0e956f505534d
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_04.parquet
+    sha256: f4c6de97958a200e84f20f98c3ce83a50e3c9048ae183d39e6df1dd05cee3eff
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_05.parquet
+    sha256: a1e36e3ef7c0067ccc2185adab1152274227f61b0215488139759890ac636478
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_06.parquet
+    sha256: 9136ae889500f69eb74cee232b8cee639d69cebf0f0c9fc7067253393ba58235
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_07.parquet
+    sha256: 8236660d0b9b69b3fb0746c81b1c0d7033c4270d62419b22787104adb2e9b02c
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_08.parquet
+    sha256: 6d219fd2f44f1cd535141a75bee6d31b2bde37e11cd252b5304ccbe772547ce3
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_09.parquet
+    sha256: 07b07c2f419d910f185b8883355d2111576adfb2566324a896ea7b27e3be4669
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_10.parquet
+    sha256: 30054fc710a59c0ee3008bbaabf5d072460c23b7306c047936e3c28a6033c561
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_11.parquet
+    sha256: 2b5b366b7207563fca765069c5575b94fb18432b527ef3cbeab6d7ab01abf25f
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2024_12.parquet
+    sha256: dc705c0fbd52cb6e63e3f74bb238e63fae7df70c4d765cc87d75c32637371926
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_01.parquet
+    sha256: 204526f7631e297520a1ef3e01221f984cf06de711adb60699e35ce247b888bb
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_02.parquet
+    sha256: cb6fcaf5dfb3940cd6e9753e88374783f8ebb4cd78dbbe27f2d4f04cbf2da225
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_03.parquet
+    sha256: 36051d38141accc6ba2a6e6b76b158eac51f68c794b3c8c2af858cefcdcb5560
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_04.parquet
+    sha256: 9988ff97b6163492f6df710f17110375d9fb5df459d040b211e12c15b7d90546
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_05.parquet
+    sha256: 19e4e33889198b7c7a20b5975512a874310be52266ff8cae2cbd40e52eefa677
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_06.parquet
+    sha256: ee56fddcce5d50b48f7e71b6eec2d271f73707fb60e6977d2f3b5c869031c6b4
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_07.parquet
+    sha256: 48d3025a2b2c973aadb85d5fe723e53436e1877747327cc168e4cf91141fcc5b
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_08.parquet
+    sha256: e2f5a07e5f21c4df14008083d638e64dc627612e8ac8d5e0503cfb25488403be
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_09.parquet
+    sha256: c9f037a6beb522e388fc64c96536a1516d442e880cf649e3848122e4b8dcb735
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_10.parquet
+    sha256: 8b4ce5fa4ee7c0dede730fe50c1fa9e114f2742b1471b8b935fa7a2b88ca134b
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_11.parquet
+    sha256: bd74f91c26235103b8998f516e187bdd52720d5b0610758dd20fe4705de60eef
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2025_12.parquet
+    sha256: 4d4dd4202bba2765e733ab11742bef3d5ee8c5c46da15aaa9e9869b89a9214e2
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_01.parquet
+    sha256: e2da7aeddccc6e333b9faa312332bcd489ddac409d848159e5f7c2d66cfe9cf2
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_02.parquet
+    sha256: 9977fb39025e324ae07ee78463b88ed75819064a9ed5c65ed9127640a03f5533
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_03.parquet
+    sha256: 79f144be14bd90c5ddc5cf71905227bd631088748e906ce5dd7fac030696b316
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_04.parquet
+    sha256: 0c4e83c2a00fa1178285cb06ca35bc832b1b1bc6f5dd3caf05cc034d7e44ae45
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_05.parquet
+    sha256: df26cbb3eacc6680c5c0656ee4a6f7cd87b3d70a6365c467ccf25c2365faabc0
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_06.parquet
+    sha256: a9b3663743fc1449052e183c06c8d5164d5f7839f5f07e491e3d37c6f75f7ff1
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_07.parquet
+    sha256: 19a71f0b42131d9c7809d10d9953a838633cc8a77194b6606d4b802332b9e68d
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_08.parquet
+    sha256: f35f35bf3fdcdb947c6b89d71239eeb963ed2571738366678a67f3c0824d52ac
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_09.parquet
+    sha256: 780d225556ed4bd6a8e68bf9b7b7d16c3bc6fb5f8e1b2a4825998a78a0588d08
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/airnow_pm25_2026_10_partial.parquet
+    sha256: 8175c4e46a69c701395364d6a54b0cfdbd601d3318cc5277e47386f2e8fb8bf9
+  - path: data/raw/AirNow/HourlyAQObs 2019-2026/missing_files.log
+    sha256: 1692e441e5b62f3babb328ad14911e507d8d9b863b18fa8abdd66501534dc41b
+  notes: 'Fetched by the legacy script scripts/download_airnow.py (inbox/seagate/legacy-code/, to be filed
+    under archive/legacy-code/). missing_files.log lists one missing hour (2025-04-01 22:00). Last file
+    is partial (to 2026-10-08 23:00 UTC). Card: knowledge/data/airnow-hourlyaqobs.md.'
+- id: airnow-hourlydata-2014-2019
+  provider: US EPA AirNow (data owned by the reporting agencies)
+  url: https://files.airnowtech.org/airnow/YYYY/YYYYMMDD/HourlyData_YYYYMMDDHH.dat and https://files.airnowtech.org/airnow/YYYY/YYYYMMDD/monitoring_site_locations.dat
+  api_query: every UTC hour 2014-01-01T00 to 2019-05-28T23, rows with Parameter PM2.5 (all countries),
+    malformed lines skipped; site files for 2016-06-21 and the 1st of each month 2016-07-01 to 2019-06-01
+  downloaded_utc: unknown
+  license: 'AirNow Data Exchange Guidelines (https://docs.airnowapi.org/docs/DataUseGuidelines.pdf): preliminary
+    data; credit the reporting agencies and AirNow; say products use preliminary data; disseminate values
+    unaltered. No licence grant found.'
+  redistribution_allowed: unknown
+  files:
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_01.parquet
+    sha256: a17c5447d4eabdfca00f077fb16eb1588c358ae36a01acd86470da80a19b1aa6
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_02.parquet
+    sha256: df9464aa9ee0d351375a03ab7e1781af9bbdc8c53a915c76bb824371eadfbb3a
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_03.parquet
+    sha256: 2fdacd4c3b1442e8963cf58017938d84e280ef957e06bedb5837133bbc6de00a
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_04.parquet
+    sha256: cd4cb6eee42147e65ca2d9aaf10ebdb3e730b32bd4cb21bb4db9c8aa74b8ed35
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_05.parquet
+    sha256: 0d9ae444afe3384c2e59efe64dbddfa2eb881c58991d1addcbb2dc7dcbf7a4c6
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_06.parquet
+    sha256: a8915fabb59b62534cf0d26bc3bc9869455a7b3cbe93e0a5d3bf7bf492876e7c
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_07.parquet
+    sha256: 4390e059739819cc2ce6c6fc97918590153d7cbed0f93c55adb14d40b4aa7ff3
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_08.parquet
+    sha256: 82f5b40987663306a34a86d0037748a85b7948ec9afbf2942e7f6334b0a4789e
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_09.parquet
+    sha256: e5ba675cdb00efc9f210749dfb1d9475902b3f611e2be846e43b918d922d4574
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_10.parquet
+    sha256: eacf8101ddf4725447038c85cc981420038279721f6c4e6275eb46e2578f4fe9
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_11.parquet
+    sha256: df7434cc88edcb0cba81eb9c80e7038b562fd4e59edf4c2c22c7f9c2b5894d25
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2014_12.parquet
+    sha256: ca169340f9c56f33c912a8ca1626e17f624d6aebc9ad3778a9e9c64243790871
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_01.parquet
+    sha256: 75cab05f0aed9e8ee5135ca4b8dcdb61ad2b2416b63b0fa8cdfe35d2d4d1a224
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_02.parquet
+    sha256: 9dc7c05fd7deedbe57d0a02659bbfc7854658876a4c43e1fad7cbfc7046c6140
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_03.parquet
+    sha256: 775e9617448d527137fb6b320d460b20ac170c00c9c997fb85a9113b93a25ea2
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_04.parquet
+    sha256: 9867a72a1df0362c54fc40cc309ee377a9a955128b35e39539acd21f036b46a5
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_05.parquet
+    sha256: fa133c545daa5cc1a93ff8c149a4e4f20fa9f8e3f2589b620054574261fc72c7
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_06.parquet
+    sha256: 0b7a6c8183da49bac36adee03f415d864a9a10231d229f8e821d171b9ec0e6fb
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_07.parquet
+    sha256: 7d24da0f98a08e3ec905fe46aab16873a61b9d818b506bcf43839ba6efe489ce
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_08.parquet
+    sha256: f05461705a1761bc2353b2f03c79c5fd1577052924f95ca7f98d2360c9941cac
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_09.parquet
+    sha256: 4cea347cfd4e7a6472db98bf4905e2f8ad84f7e4452ee4058ce82c5e59d81090
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_10.parquet
+    sha256: 279fb71b5c7566f473db6419b8329edff0c68d880392c392e5c697c4dcebfe2b
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_11.parquet
+    sha256: fa7ad8045a1090b6ee5f67755ad82830675257fbbf9ab72547bab1c310700f10
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2015_12.parquet
+    sha256: 9e3510c789844f6356833638d1b99ebfc7e9579a106bd887e4dba0815cb1aa2c
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_01.parquet
+    sha256: 1c9ffbaf78333a3dbbf57c02f7f5f650a2ffc8c4a3b9120450282f49245bba7e
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_02.parquet
+    sha256: ab808493561961e038b7a41a029a139b78daab75909a7e9f48a0f25e28e16f5e
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_03.parquet
+    sha256: 4546f47c893fc61ee6050dd4881b885fe246f822271a448a1234e083322cdefa
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_04.parquet
+    sha256: 3423c3209735d61ddf1a41e8ed96d67375ace3cc857737b8c999fe6ae5001176
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_05.parquet
+    sha256: e2a4246af8fb192d16af83969c4a878679847c51bbd830a9bbe9ddfa3fdd5378
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_06.parquet
+    sha256: 0b79dbe23d6880016dfcb84c90391541a7762bef2e7096842f9b45de2f022f55
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_07.parquet
+    sha256: f642b35f4d819de76eceb74e5f77d187f9e2c7af3e7a5b9c0f9d221315f4644a
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_08.parquet
+    sha256: 4fad6911e1b01dc98c2d1341d4c5bc65a386e44cdc58fb0c34c73eb471d54342
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_09.parquet
+    sha256: 84dcfe1b6a9f400bc6f8b3f9a5ef731e83b01c66e1f806e3fd2d3f445383831b
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_10.parquet
+    sha256: 54f9a4c53372ac233abd9dfc35743d1ad75329ebdeb1dd62dbf144a3a450ab2c
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_11.parquet
+    sha256: 003893446c87204b1729af31bdbe845acb6c5d16c5376b870c1da15ee6547ab0
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2016_12.parquet
+    sha256: 209eaef6545bf39f0b783cefea14d0dc2da066c806ea14c817b54dc833717b20
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_01.parquet
+    sha256: 9fa1bb3efc44c64cc87680bb4410d3858f0d2718ad20b77e1dd03969ca4bcaf5
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_02.parquet
+    sha256: 23a32195f1e2173ef792b1d982294eaa1ce6a2728ffffdf573df0de33c4d09c9
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_03.parquet
+    sha256: daba77fa3f0acb35420347f52dc2501626ef6e1aefcb3659e4c497baa46ecce6
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_04.parquet
+    sha256: 8f140f91f14013ede772873e3ee3af3d96a85b7a8d9df554294f73019ef90077
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_05.parquet
+    sha256: f56a375971bf1cc6e0a199c2bd1dabd1f84ac4dcada0b0c16dac337de766db1a
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_06.parquet
+    sha256: 1e49b45ca8eda44606beeddc740d17884449eaeeffbcdd8a539dfc22163d6e61
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_07.parquet
+    sha256: d30be74cb1b56975c690bebe84cd68d9ceaca7e6f2ac15697ed7758019d9c5d5
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_08.parquet
+    sha256: c631cd1cba5e3bbe6e4c875420bf32128a8abde3239ea812d4c19dee8e826370
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_09.parquet
+    sha256: abcf1a18c6e3c9280099dca9da3609ce13577ce28c77d2787316b64ffe766558
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_10.parquet
+    sha256: accca3d60580c864545da844afea3436f85374f70242e7a794da79b92b1a0cd6
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_11.parquet
+    sha256: 21ab11335d742456df9c63c4494c2df27f8ee194eb4d23929130bf0a892133c8
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2017_12.parquet
+    sha256: b4cb50f9af4835fbc55b4f06eab4ad70ce21ae54427853930dd166234c831770
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_01.parquet
+    sha256: 4fa1b7db1c1ed73672a43ec8dfb82c65578daf9aead47ea5a1cf1bbd492af495
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_02.parquet
+    sha256: 51afde0cbcfdf5addbccf7cb6e728cc595ab3cb5580cb509fea9c54ece019ee4
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_03.parquet
+    sha256: 018274a357792ff9754dc215458d9f57635dd125c708b46839911110fd83a9fb
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_04.parquet
+    sha256: 2bc1781fd269d3bebff2a849647612107b5da28bf8d9d13d24a25a5ea6804b90
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_05.parquet
+    sha256: 8102852e40ef7a4d6eb5001651e75333ee7c95e0b2968cb6ceaef5b363b46d8d
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_06.parquet
+    sha256: 5d76217a97c4561de56fcd751d35e85a287f8248e8c1ea93d1f22b88b09dc678
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_07.parquet
+    sha256: 19e803c1ef0bbb692c256c9571f8a3d6a53434ac4b8248bb3cdd3b6ced43f7ec
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_08.parquet
+    sha256: 35bebf4989e499c0deea81b49f5bbce4ac5cd1aeb5e9d60393c341c9c6564747
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_09.parquet
+    sha256: 292a331b78cebaab6a28fbb222ca86693573a050e1f877ab6d079ac0e9a2b15c
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_10.parquet
+    sha256: da5927726883b01978511cb6c01c3a0eb77dbfee6c1ed157c10f9bcf3c8ef6ab
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_11.parquet
+    sha256: f1c47aabd1ede1891701426fd217c90d1b3a0ee2d8b4f41935af842914f7ceba
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2018_12.parquet
+    sha256: ec4f792b7937587c5d8b434adf930f22a1ea95ac37831287437e7216ae68df8d
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2019_01.parquet
+    sha256: facca4ed56b6b0fef919fcd954ce8d4160ad4a1680d84c570b6679ab6ae24b9d
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2019_02.parquet
+    sha256: 8002d9547a175a53da34d364236199839b13d29ff5c7c527b8accef7f2377ac3
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2019_03.parquet
+    sha256: 10d229cff7b8ac3ce54f77153285d87f853765e101f20a44d2b310b99187e11c
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2019_04.parquet
+    sha256: 55dc1172142456007fecf9718dc55a0d7054fbba04943a915688053a37066213
+  - path: data/raw/AirNow/HourlyData 2014-2019/airnow_hourlydata_pm25_2019_05.parquet
+    sha256: 7dbf16deb4f74e5f95358195a002009823995d622027be59b6fa2979046bf1b3
+  - path: data/raw/AirNow/HourlyData 2014-2019/missing_files.log
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20160621.dat
+    sha256: 60cc7504efc96046a19d5474b22dda6f27faf418e66292c6177ac27f0ecc12d0
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20160701.dat
+    sha256: c8df02d974f9e67803b66e0ba8e91cae78f675ffa1ad77db9e518b7b7ec7b07a
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20160801.dat
+    sha256: d67a021028a53fcd2e5977205dc3cafd78b91348eb1aee681886299db4c2c606
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20160901.dat
+    sha256: b982d93775571ffcded858fc2e8091ed70f253ed4764437d2fd87279d2fd5280
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20161001.dat
+    sha256: 6676bd156986eb56b675d0241a4b7b0cba5c9e24991f5788f683c89b3829d9d0
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20161101.dat
+    sha256: f44a15a0da2a366574b3e20a2be0254359b4322a3f2475cb35292960d5a1b46a
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20161201.dat
+    sha256: ef3852564c872ae8876ba71f925dfd8154a226bcc3b1e1f8fae90389c4ddee21
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170101.dat
+    sha256: 1e2e2b9120070ccfa1b794fa06e0748decf188fd56fc8876d770375cc00f9ab2
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170201.dat
+    sha256: 34e689d66b82cb747d49bfac370a3f7ab568785313a6f382f8a529608cecf6c9
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170301.dat
+    sha256: 10d59df061bbcd3bdd59b37621760bb900445e8b6d550dc504983a6b96b8a259
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170401.dat
+    sha256: 7bae53ad559daa3e656e6359fe971f6333c911d6b66e95e45d09465e7cab609b
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170501.dat
+    sha256: 28f3482c10504f4139130b728376066c25c0092663b00dddd23686d48442de4f
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170601.dat
+    sha256: 45abe387570ecff0da3c16547b3ccc7b8b6a9ada667a8753413f08c77ecdcdbf
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170701.dat
+    sha256: 30c241b889d4ec3d03a75e98e596f4f800846e19250f7a9f9397dab90753375e
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170801.dat
+    sha256: 7cd906b6d90d4a359b8d425ff15a2ba33ae31d13cb3a5d5e0e5117466c616724
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20170901.dat
+    sha256: dae6eb9f548f8414b3e792880590ab5037d04da1615712f7a305ba96d651c4df
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20171001.dat
+    sha256: b2f68a835647767b064c445663e07fd14e710bb548140318b8f0af75ba025115
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20171101.dat
+    sha256: b8b0e573ae63d367622ba1ed1a37c50bd474e59b6cf4b90469e29c60a80ace03
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20171201.dat
+    sha256: 54ca2aa7048bb509681b8fc419c7d42f0b3b3fe27661623fbd22de4d8ece7296
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180101.dat
+    sha256: e14065e07d4cc4ad4d6fbe7e766f76a899c485d1f328bb6c93de88415ed704d8
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180201.dat
+    sha256: 1ebe9cd7971d602154200c8293d95ae1e9d37f260a23f300d4c4966766b9f479
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180301.dat
+    sha256: 3eb96cfff7442d2cc262f00440e65b9d3279abcf58670d420b2d30482cbaa539
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180401.dat
+    sha256: 187a13c78c2aef82e53a23ed88048e1b7bc2b8be13f5ddd498eb12e017d83eca
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180501.dat
+    sha256: 14edb332fbeec28a6727950aef8aae5b5061644a93a4492a0f2dd276c1381107
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180601.dat
+    sha256: eddbbb561fd8dad286b1592e80da61a7506c62b9ee9b8f49f3bd8a00ccc55f14
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180701.dat
+    sha256: 3b28c749e778e75bb6307f800b615ef03de18d9771479cbad8ec178db2d3aa13
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180801.dat
+    sha256: b3664bbb569bc3f0ca4193cec90dd6dfaaace93c394b29d88158954f922430c3
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20180901.dat
+    sha256: 8b1a09263cb7611411c423cdbbad394646154f072d12b1f75f1ea60e6823b482
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20181001.dat
+    sha256: 8012942db6b7e306da9e76df1a49b52f554b53c65dbb98c0608bdcf09d1975b4
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20181101.dat
+    sha256: 20da1edf3514d2b9a430381e7c34ea2845b27ffa9d0dcae4194c3c7eb049c8b8
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20181201.dat
+    sha256: 1555cdf724382225f463c2b87285362f8211f088b8c5f62ab04a955655e8efc8
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190101.dat
+    sha256: 47ed8ae2ee4880d5ae6b5429650d061bb71215ded884e4955cb14c71f5f0d6ec
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190201.dat
+    sha256: 1dc8d4fccb0d449ea7f4fadaa03e748efb276472bf2e71bc2e6831d36de2d5fb
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190301.dat
+    sha256: 019d6e6a4d2be45e4492014ece7b8e7dbcae66d79de5e45680e74440914a2179
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190401.dat
+    sha256: 43542931da5341956298faae727667f60f5c951b42a2b5758b30e43884787f50
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190501.dat
+    sha256: e66b257f5eaa5b455eb14983121774ab3d21fed3def5a3a6ea22a2e2e822ea33
+  - path: data/raw/AirNow/HourlyData 2014-2019/site_locations/monitoring_site_locations_20190601.dat
+    sha256: 393ac29bcdbedda6adcc2f241fcf305de8329019017e5a8ed806509b1e386d79
+  notes: 'Fetched by the legacy script scripts/download_airnow_hourlydata.py (inbox/seagate/legacy-code/,
+    to be filed under archive/legacy-code/). missing_files.log is empty. Card: knowledge/data/airnow-hourlydata-2014-2019.md.'
+- id: toronto-city-boundary
+  provider: City of Toronto (Information & Technology), Toronto Open Data
+  url: https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/841fb820-46d0-46ac-8dcb-d20f27e57bcc/resource/41bf97f0-da1a-46a9-ac25-5ce0078d6760/download/toronto-boundary-wgs84.zip
+  api_query: 'CKAN package_show id=regional-municipal-boundary; resource name=toronto-boundary-wgs84 (id
+    41bf97f0-da1a-46a9-ac25-5ce0078d6760, format SHP). Command: uv run python -m clear.ingest.toronto_open_data
+    --package regional-municipal-boundary --resource toronto-boundary-wgs84 --out inbox/toronto-city-boundary'
+  downloaded_utc: '2026-10-24T20:47:08Z'
+  license: 'Open Government Licence - Toronto v1.0 (https://open.toronto.ca/open-data-licence/; CKAN license_id
+    open-government-licence-toronto). Attribution: ''Contains information licensed under the Open Government
+    Licence - Toronto.'''
+  redistribution_allowed: true
+  files:
+  - path: data/raw/City of Toronto boundary/toronto-boundary-wgs84.zip
+    sha256: 7c4b32f9d4532eedcb5f533973d6b55f27370dad7b2fa91b03cfb7942e8d0a4f
+  notes: 'Landing page https://open.toronto.ca/dataset/regional-municipal-boundary/. CKAN resource last_modified
+    2019-07-23T17:56:39, size 195966 bytes (matches download); files inside the zip dated 2012. Fetch
+    module src/clear/ingest/toronto_open_data.py. Downloaded to inbox/toronto-city-boundary/, filed to
+    the path above by scripts/intake.py 2026-10-24T20:56:15Z (manifests/intake-log.csv). downloaded_utc
+    is not from code: this fetch ran before the module recorded receipt time. It is the file''s
+    write time (mtime 2026-10-24T20:47:08.885Z, kept by intake''s copy2), truncated to the second;
+    the body arrived just before. Card: knowledge/data/toronto-city-boundary.md.'
 
 # Example entry (copy, uncomment, fill in; do not invent values):
 #

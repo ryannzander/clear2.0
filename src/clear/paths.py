@@ -32,6 +32,14 @@ def config_dir() -> Path:
     return repo_root() / "config"
 
 
+def data_dir() -> Path:
+    """Return ``<repo>/data`` (``raw/``, ``interim/``, ``processed/``, ``features/`` below it).
+
+    Method: AGENTS.md#repo-map
+    """
+    return repo_root() / "data"
+
+
 def figures_src_dir() -> Path:
     """Return ``<repo>/figures/src``, home of the ``fig_<slug>.py`` scripts.
 

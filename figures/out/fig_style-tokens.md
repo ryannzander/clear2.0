@@ -5,10 +5,10 @@ preset: paper-2col
 headline: false
 inputs:
 - path: src/clear/viz/tokens.yaml
-  sha256: c3bdb95a01d9117db155889e6d27589e33d548d6a0a4479ed4091ae1a3fc9549
+  sha256: bcc89744a356ac176ced3f83e5b67f7cd663259c3cc104ff6eb44106901df2ff
 script: figures/src/fig_style-tokens.py
-git_commit: uncommitted
-generated_utc: '2026-10-22T00:55:56Z'
+git_commit: cf5d49b-dirty
+generated_utc: '2026-10-24T22:40:17Z'
 ---
 
 # fig_style-tokens

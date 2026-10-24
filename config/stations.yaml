@@ -1,0 +1,29 @@
+# Constants of the `stations` part. Loaded by clear.stations.settings.load_stations_config().
+# Spec: methodology/stations.md · ADRs: decisions/0003, 0004, 0005, 0007, 0008, 0009
+sources:
+  # Spec: methodology/stations.md#read-sources (folders are under data/raw/)
+  naps:
+    folders:  # data-card slug: folder under data/raw
+      naps-hourly-pm25: "Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)"
+    utc_offset_h: -5          # local standard time, no DST (knowledge/data/naps-hourly-pm25.md)
+    hour_ending: true         # documented (naps card); converted to hour-beginning, ADR 0005
+    sentinels: [-999]         # ADR 0007; naps card "Known issues"
+  mecp:
+    folders:
+      mecp-hourly-pm25: "Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Individual yearly spreadsheets"
+    utc_offset_h: -5          # EST all year (mecp card)
+    hour_ending: true         # observed, not documented (mecp card); ADR 0005
+    sentinels: [9999, -999]   # 9999 documented, -999 found in the data; ADR 0007
+  airnow:
+    folders:
+      airnow-hourlyaqobs: "AirNow/HourlyAQObs 2019-2026"
+      airnow-hourlydata-2014-2019: "AirNow/HourlyData 2014-2019"
+    utc_offset_h: 0           # UTC (airnow cards)
+    hour_ending: false        # hour-beginning (airnow cards)
+    sentinels: [-9999, -4996] # not documented codes, seen once each (airnow card); ADR 0007
+negative_is_missing: true             # ADR 0007
+source_priority: [naps, mecp, airnow] # merged mode picks the first source with a value; ADR 0003
+overlap_mode: merged                  # merged | separate; ADR 0003, compared in EXP-003
+crosswalk_max_distance_m: 500         # stations closer than this are one site; ADR 0008
+completeness_min_frac: 0.75       # flag threshold for fraction of hours present; ADR 0004
+registry_margin_deg: 0.5              # registry box = City bounds +/- this; context only (methodology/stations.md#read-sources)

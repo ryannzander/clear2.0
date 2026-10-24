@@ -14,8 +14,8 @@ time_coverage: 2019-05-29T00:00:00Z/2026-10-09T00:00:00Z   # last hour starts 20
 time_convention: UTC, hour-beginning (ValidTime 10:00 = 10:00-10:59 UTC); no DST; GMTOffset = hours to local standard time
 spatial_coverage: US + Canada; 1,841 AQSIDs (282 Canadian); 4 Toronto sites in 2026
 rows: 74493289                    # site-hours with a PM2.5 value
-validation: unvalidated
-validation_report: null
+validation: partial
+validation_report: knowledge/data/airnow-hourlyaqobs.validation.md
 ---
 
 # airnow-hourlyaqobs
@@ -93,7 +93,7 @@ For 2026 it is the only government PM2.5 source in `data/raw` (NAPS ends 2024, M
   preliminary and credit the agencies.
 
 ## Validation
-`unvalidated` — no report yet (needs `methodology/stations.md`). 2026-10-24.
+`partial` — [airnow-hourlyaqobs.validation.md](airnow-hourlyaqobs.validation.md), 2026-10-24.
 Evidence read: AirNow HourlyAQObs fact sheet (docs.airnowapi.org/docs/HourlyAQObsFactSheet.pdf),
 Data Exchange Guidelines (docs.airnowapi.org/docs/DataUseGuidelines.pdf),
 [airnow-summary mirror](../docs/seagate-documents-35-airnow-clear2-airnow-summary.md).

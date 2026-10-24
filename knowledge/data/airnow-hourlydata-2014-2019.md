@@ -14,8 +14,8 @@ time_coverage: 2014-01-01T00:00:00Z/2019-05-29T00:00:00Z   # last hour starts 20
 time_convention: UTC, hour-beginning (ValidTime 17:00 = 17:00-17:59 UTC); no DST
 spatial_coverage: worldwide AirNow sites, 1,436 AQSIDs (144 Canadian-prefixed, 30 Ontario); 1 Toronto site
 rows: 40419465                    # site-hour PM2.5 rows; plus 37 site-location snapshots (365,719 lines)
-validation: unvalidated
-validation_report: null
+validation: partial
+validation_report: knowledge/data/airnow-hourlydata-2014-2019.validation.md
 ---
 
 # airnow-hourlydata-2014-2019
@@ -84,6 +84,6 @@ are not in the fact sheet's 19-field list (blank in the rows checked) `<verify>`
 - Preliminary data, same terms as [airnow-hourlyaqobs](airnow-hourlyaqobs.md).
 
 ## Validation
-`unvalidated` — no report yet (needs `methodology/stations.md`). 2026-10-24.
+`partial` — [airnow-hourlydata-2014-2019.validation.md](airnow-hourlydata-2014-2019.validation.md), 2026-10-24.
 Evidence read: AirNow HourlyData fact sheet (docs.airnowapi.org/docs/HourlyDataFactSheet.pdf),
 Monitoring Site Locations fact sheet (docs.airnowapi.org/docs/MonitoringSiteFactSheet.pdf).

@@ -1,0 +1,521 @@
+{
+  "experiment": "EXP-003",
+  "git_commit": "the commit that adds this file (git log -1 -- <this file>)",
+  "data_sha256": {
+    "toronto-city-boundary": "7c4b32f9d4532eedcb5f533973d6b55f27370dad7b2fa91b03cfb7942e8d0a4f",
+    "naps / mecp / airnow": "per file in data/sources.yaml"
+  },
+  "config": "config/stations.yaml",
+  "metrics": {
+    "toronto_stations": 24,
+    "toronto_sites": 11,
+    "stations_by_source": {
+      "airnow": 5,
+      "mecp": 6,
+      "naps": 13
+    },
+    "station_years_active": {
+      "airnow:000060410": "2023-2026",
+      "airnow:000060424": "2014-2021",
+      "airnow:124000060430": "2023-2026",
+      "airnow:124000060440": "2023-2026",
+      "airnow:124000060445": "2020-2026",
+      "mecp:31103": "2003-2019",
+      "mecp:31129": "2019-2025",
+      "mecp:33003": "2003-2025",
+      "mecp:34020": "2003-2016",
+      "mecp:34021": "2017-2025",
+      "mecp:35125": "2003-2025",
+      "naps:060403": "2000-2001",
+      "naps:060410": "2002-2024",
+      "naps:060413": "2002-2010",
+      "naps:060421": "2000-2016",
+      "naps:060424": "2000-2002",
+      "naps:060429": "2001-2012",
+      "naps:060430": "2000-2024",
+      "naps:060433": "2003-2019",
+      "naps:060435": "2010-2024",
+      "naps:060438": "2016-2024",
+      "naps:060439": "2019-2019",
+      "naps:060440": "2017-2024",
+      "naps:060445": "2019-2024"
+    },
+    "completeness_min_frac": 0.75,
+    "separate": {
+      "series": 24,
+      "meeting_threshold": {
+        "test": 4,
+        "train": 11,
+        "val": 8
+      },
+      "mean_present_frac": {
+        "test": 0.1631,
+        "train": 0.4935,
+        "val": 0.3282
+      }
+    },
+    "merged": {
+      "series": 11,
+      "meeting_threshold": {
+        "test": 4,
+        "train": 5,
+        "val": 4
+      },
+      "mean_present_frac": {
+        "test": 0.3556,
+        "train": 0.4451,
+        "val": 0.361
+      },
+      "hours_by_source": {
+        "airnow": 41165,
+        "mecp": 35210,
+        "naps": 1088311
+      }
+    },
+    "merged_vs_best_member": [
+      {
+        "site_id": "naps:060403",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060403"
+      },
+      {
+        "site_id": "naps:060403",
+        "split": "train",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060403"
+      },
+      {
+        "site_id": "naps:060403",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060403"
+      },
+      {
+        "site_id": "naps:060410",
+        "split": "test",
+        "merged_frac": 0.9824,
+        "best_member_frac": 0.9821,
+        "best_member": "airnow:000060410"
+      },
+      {
+        "site_id": "naps:060410",
+        "split": "train",
+        "merged_frac": 0.9932,
+        "best_member_frac": 0.9908,
+        "best_member": "naps:060410"
+      },
+      {
+        "site_id": "naps:060410",
+        "split": "val",
+        "merged_frac": 0.9985,
+        "best_member_frac": 0.9963,
+        "best_member": "mecp:33003"
+      },
+      {
+        "site_id": "naps:060413",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060413"
+      },
+      {
+        "site_id": "naps:060413",
+        "split": "train",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060413"
+      },
+      {
+        "site_id": "naps:060413",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060413"
+      },
+      {
+        "site_id": "naps:060421",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "mecp:34020"
+      },
+      {
+        "site_id": "naps:060421",
+        "split": "train",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "mecp:34020"
+      },
+      {
+        "site_id": "naps:060421",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "mecp:34020"
+      },
+      {
+        "site_id": "naps:060429",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060429"
+      },
+      {
+        "site_id": "naps:060429",
+        "split": "train",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060429"
+      },
+      {
+        "site_id": "naps:060429",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060429"
+      },
+      {
+        "site_id": "naps:060430",
+        "split": "test",
+        "merged_frac": 0.9846,
+        "best_member_frac": 0.9843,
+        "best_member": "airnow:124000060430"
+      },
+      {
+        "site_id": "naps:060430",
+        "split": "train",
+        "merged_frac": 1.0,
+        "best_member_frac": 0.9897,
+        "best_member": "naps:060430"
+      },
+      {
+        "site_id": "naps:060430",
+        "split": "val",
+        "merged_frac": 0.9965,
+        "best_member_frac": 0.9926,
+        "best_member": "mecp:35125"
+      },
+      {
+        "site_id": "naps:060433",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "airnow:000060424"
+      },
+      {
+        "site_id": "naps:060433",
+        "split": "train",
+        "merged_frac": 0.0189,
+        "best_member_frac": 0.0189,
+        "best_member": "airnow:000060424"
+      },
+      {
+        "site_id": "naps:060433",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "airnow:000060424"
+      },
+      {
+        "site_id": "naps:060435",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060435"
+      },
+      {
+        "site_id": "naps:060435",
+        "split": "train",
+        "merged_frac": 0.9016,
+        "best_member_frac": 0.9016,
+        "best_member": "naps:060435"
+      },
+      {
+        "site_id": "naps:060435",
+        "split": "val",
+        "merged_frac": 0.0006,
+        "best_member_frac": 0.0006,
+        "best_member": "naps:060435"
+      },
+      {
+        "site_id": "naps:060439",
+        "split": "test",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060439"
+      },
+      {
+        "site_id": "naps:060439",
+        "split": "train",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060439"
+      },
+      {
+        "site_id": "naps:060439",
+        "split": "val",
+        "merged_frac": 0.0,
+        "best_member_frac": 0.0,
+        "best_member": "naps:060439"
+      },
+      {
+        "site_id": "naps:060440",
+        "split": "test",
+        "merged_frac": 0.9838,
+        "best_member_frac": 0.9835,
+        "best_member": "airnow:124000060440"
+      },
+      {
+        "site_id": "naps:060440",
+        "split": "train",
+        "merged_frac": 0.9883,
+        "best_member_frac": 0.9876,
+        "best_member": "naps:060440"
+      },
+      {
+        "site_id": "naps:060440",
+        "split": "val",
+        "merged_frac": 0.995,
+        "best_member_frac": 0.992,
+        "best_member": "mecp:34021"
+      },
+      {
+        "site_id": "naps:060445",
+        "split": "test",
+        "merged_frac": 0.9612,
+        "best_member_frac": 0.9609,
+        "best_member": "airnow:124000060445"
+      },
+      {
+        "site_id": "naps:060445",
+        "split": "train",
+        "merged_frac": 0.9947,
+        "best_member_frac": 0.9824,
+        "best_member": "naps:060445"
+      },
+      {
+        "site_id": "naps:060445",
+        "split": "val",
+        "merged_frac": 0.9803,
+        "best_member_frac": 0.9713,
+        "best_member": "mecp:31129"
+      }
+    ],
+    "agreement": [
+      {
+        "site_id": "naps:060410",
+        "station_a": "airnow:000060410",
+        "station_b": "mecp:33003",
+        "shared_h": 21329,
+        "bias_ugm3": -0.3163,
+        "rmse_ugm3": 0.7032,
+        "r_lag_m1h": 0.9668,
+        "r": 0.9964,
+        "r_lag_p1h": 0.9663
+      },
+      {
+        "site_id": "naps:060410",
+        "station_a": "airnow:000060410",
+        "station_b": "naps:060410",
+        "shared_h": 12697,
+        "bias_ugm3": -0.5316,
+        "rmse_ugm3": 0.9108,
+        "r_lag_m1h": 0.9465,
+        "r": 0.9913,
+        "r_lag_p1h": 0.9458
+      },
+      {
+        "site_id": "naps:060410",
+        "station_a": "mecp:33003",
+        "station_b": "naps:060410",
+        "shared_h": 190751,
+        "bias_ugm3": -0.0001,
+        "rmse_ugm3": 0.4888,
+        "r_lag_m1h": 0.9354,
+        "r": 0.9974,
+        "r_lag_p1h": 0.9414
+      },
+      {
+        "site_id": "naps:060421",
+        "station_a": "mecp:34020",
+        "station_b": "naps:060421",
+        "shared_h": 119643,
+        "bias_ugm3": -0.0002,
+        "rmse_ugm3": 0.0457,
+        "r_lag_m1h": 0.9456,
+        "r": 1.0,
+        "r_lag_p1h": 0.9456
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "airnow:124000060430",
+        "station_b": "mecp:35125",
+        "shared_h": 21248,
+        "bias_ugm3": -0.322,
+        "rmse_ugm3": 0.7105,
+        "r_lag_m1h": 0.9648,
+        "r": 0.9968,
+        "r_lag_p1h": 0.9649
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "airnow:124000060430",
+        "station_b": "naps:060430",
+        "shared_h": 12663,
+        "bias_ugm3": -0.5424,
+        "rmse_ugm3": 0.922,
+        "r_lag_m1h": 0.9476,
+        "r": 0.9919,
+        "r_lag_p1h": 0.9473
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "airnow:124000060430",
+        "station_b": "naps:060438",
+        "shared_h": 12322,
+        "bias_ugm3": -0.5283,
+        "rmse_ugm3": 1.844,
+        "r_lag_m1h": 0.9145,
+        "r": 0.9519,
+        "r_lag_p1h": 0.9097
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "mecp:35125",
+        "station_b": "naps:060430",
+        "shared_h": 189310,
+        "bias_ugm3": 0.0006,
+        "rmse_ugm3": 0.091,
+        "r_lag_m1h": 0.9334,
+        "r": 0.9999,
+        "r_lag_p1h": 0.9334
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "mecp:35125",
+        "station_b": "naps:060438",
+        "shared_h": 75993,
+        "bias_ugm3": 1.4658,
+        "rmse_ugm3": 4.3921,
+        "r_lag_m1h": 0.7719,
+        "r": 0.822,
+        "r_lag_p1h": 0.783
+      },
+      {
+        "site_id": "naps:060430",
+        "station_a": "naps:060430",
+        "station_b": "naps:060438",
+        "shared_h": 76084,
+        "bias_ugm3": 1.4669,
+        "rmse_ugm3": 4.3897,
+        "r_lag_m1h": 0.7722,
+        "r": 0.8224,
+        "r_lag_p1h": 0.7833
+      },
+      {
+        "site_id": "naps:060433",
+        "station_a": "airnow:000060424",
+        "station_b": "mecp:31103",
+        "shared_h": 45693,
+        "bias_ugm3": -0.0003,
+        "rmse_ugm3": 0.0434,
+        "r_lag_m1h": 0.9389,
+        "r": 1.0,
+        "r_lag_p1h": 0.937
+      },
+      {
+        "site_id": "naps:060433",
+        "station_a": "airnow:000060424",
+        "station_b": "naps:060433",
+        "shared_h": 45709,
+        "bias_ugm3": -0.0017,
+        "rmse_ugm3": 0.89,
+        "r_lag_m1h": 0.9221,
+        "r": 0.988,
+        "r_lag_p1h": 0.9492
+      },
+      {
+        "site_id": "naps:060433",
+        "station_a": "mecp:31103",
+        "station_b": "naps:060433",
+        "shared_h": 141424,
+        "bias_ugm3": -0.0001,
+        "rmse_ugm3": 0.496,
+        "r_lag_m1h": 0.9304,
+        "r": 0.9973,
+        "r_lag_p1h": 0.937
+      },
+      {
+        "site_id": "naps:060440",
+        "station_a": "airnow:124000060440",
+        "station_b": "mecp:34021",
+        "shared_h": 21165,
+        "bias_ugm3": -0.2961,
+        "rmse_ugm3": 0.6772,
+        "r_lag_m1h": 0.9554,
+        "r": 0.9968,
+        "r_lag_p1h": 0.9568
+      },
+      {
+        "site_id": "naps:060440",
+        "station_a": "airnow:124000060440",
+        "station_b": "naps:060440",
+        "shared_h": 12557,
+        "bias_ugm3": -0.5,
+        "rmse_ugm3": 0.8802,
+        "r_lag_m1h": 0.9124,
+        "r": 0.9912,
+        "r_lag_p1h": 0.9184
+      },
+      {
+        "site_id": "naps:060440",
+        "station_a": "mecp:34021",
+        "station_b": "naps:060440",
+        "shared_h": 69098,
+        "bias_ugm3": 0.0002,
+        "rmse_ugm3": 0.0894,
+        "r_lag_m1h": 0.9379,
+        "r": 0.9999,
+        "r_lag_p1h": 0.9376
+      },
+      {
+        "site_id": "naps:060445",
+        "station_a": "airnow:124000060445",
+        "station_b": "mecp:31129",
+        "shared_h": 48266,
+        "bias_ugm3": 0.0044,
+        "rmse_ugm3": 0.0698,
+        "r_lag_m1h": 0.9331,
+        "r": 0.9999,
+        "r_lag_p1h": 0.9334
+      },
+      {
+        "site_id": "naps:060445",
+        "station_a": "airnow:124000060445",
+        "station_b": "naps:060445",
+        "shared_h": 40014,
+        "bias_ugm3": 0.0043,
+        "rmse_ugm3": 0.0659,
+        "r_lag_m1h": 0.9333,
+        "r": 0.9999,
+        "r_lag_p1h": 0.9323
+      },
+      {
+        "site_id": "naps:060445",
+        "station_a": "mecp:31129",
+        "station_b": "naps:060445",
+        "shared_h": 47595,
+        "bias_ugm3": 0.0007,
+        "rmse_ugm3": 0.0591,
+        "r_lag_m1h": 0.9358,
+        "r": 1.0,
+        "r_lag_p1h": 0.9354
+      }
+    ]
+  },
+  "notes": "metrics = the JSON of `uv run clear stations report --json` (shared with EXP-001); see separate, merged, merged_vs_best_member, agreement."
+}

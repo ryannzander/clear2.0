@@ -1,6 +1,6 @@
 # STATUS
 
-**Phase:** 1 — Stations + grid (from 2026-10-24) · **Next phase:** 2 — Domain
+**Phase:** 1 — Stations + grid (answered 2026-10-24) · **Next phase:** 2 — Domain
 **Updated:** 2026-10-24
 
 Each phase builds one stage of the system and runs: catalogue → spec → validate → build →
@@ -12,8 +12,12 @@ Stages: catalogued → spec'd → validated → built → answered.
 
 | Part (spec slug) | Question | Stage |
 |---|---|---|
-| `stations` — Toronto government monitors (NAPS, MECP, AirNow): years active, missing data | #1 | — |
-| `grid` — 0.1° grid over the City of Toronto, government stations per cell | #2 | — |
+| `stations` — Toronto government monitors (NAPS, MECP, AirNow): years active, missing data | #1 | answered (EXP-001, EXP-003); inputs validated/partial |
+| `grid` — 0.1° grid over the City of Toronto, government sites per cell | #2 | answered (EXP-002) |
+
+Results: 24 stations = 11 sites in the City; 4 sites (East, West, North, Downtown John St.)
+are ≥ 96% complete in train, val and test. 12 of 17 Toronto 0.1° cells have no active site.
+Figures: `figures/out/fig_station-completeness`, `fig_toronto-stations-grid`. None headline.
 
 ## Later phases
 
@@ -21,35 +25,31 @@ Stages: catalogued → spec'd → validated → built → answered.
   from McGuire-2026 (#5). Parts: `grid` (domain extent), `lag-plume`, `era5-wind`.
 - **Later:** target series (`target-pm25`, `alert-levels`, `bad-air-events`), features
   (`purpleair`, `satellite-fire-smoke`, `era5-wind`), `models`, alerts, `dashboard`.
-  Part list is provisional (old folder names); folders 25, 26, 27 not placed yet.
 
 ## Storage
 
-- `data/raw` → `E:\CLEAR 2.0\RAW Data` (886 GB, copy done 2026-10-21, 0 failed).
-- `data/prior` → `D:\CLEAR 2.0\Cleaned Data` (Seagate, ~130 GB): reference/golden only.
-- Inventory done 2026-10-22 (8631c34): 255,640 originals, 227,472 not filed yet.
-- Check links: `uv run python scripts/storage.py`.
+- `data/raw` → `E:\CLEAR 2.0\RAW Data` (886 GB); `data/prior` → `D:\CLEAR 2.0\Cleaned Data`.
+- Inventory 2026-10-22; Phase 1 intake 2026-10-24 (5 doc folders, City boundary).
+- Validation: boundary `validated`; NAPS, MECP, AirNow ×2 `partial` (Phase 1 read box; reports in `knowledge/data/`).
+- Rebuild Phase 1: `uv run clear stations build && uv run clear grid build` (~30 s).
 
-## Ryan's decisions (2026-10-24)
+## Decisions (ADRs 0001–0009, all accepted 2026-10-24)
 
-- Catalogue only what each phase reads; phases renamed so Phase 1 = stations + grid.
-- Dad's prompts are Issues; the choices inside them become proposed ADRs.
-- "Toronto" = the City of Toronto boundary.
-- Missing data = % of hours present plus a 75% completeness flag.
-- Station overlap is A/B tested: `merged` vs `separate`.
-- The legacy duplicates on C: stay.
+Split 2021–24/2025/2026 · Toronto = City polygon · overlap A/B (merged default) · 75%
+completeness flag · `time_utc` hour-beginning · 0.1° cells, edges on multiples, any overlap
+counts · sentinels and negatives missing · sites = stations within 500 m · rebuild station
+years stand over old doc 04 (old hour-ending UTC labels, 1 km merge).
 
 ## Next 3 actions
 
-1. Catalogue: data cards (NAPS, MECP, AirNow ×2, prior stations), scoped intake of doc
-   folders 04, 15, 19, 23, 35 + NAPS/MECP summaries, `/ingest` the City boundary.
-2. Spec: `methodology/stations.md`, `grid.md`, six proposed ADRs for Ryan.
-3. Validate, build `clear.stations` + `clear.grid`, answer with EXP-001–003.
+1. Ryan: look at EXP-001–003 and the two figures; say if any is headline material.
+2. Phase 2 catalogue: HMS smoke, ERA5 wind, McGuire-2026 paper (old folder 27).
+3. Phase 2 open questions below (AirNow offset, 060438, `PM25_Measured = 0` rows).
 
 ## Open questions for Ryan
 
-- `time_utc`: hour-beginning (provisional) or hour-ending? ADR in the spec step.
-- Data split 2021–24 train / 2025 val / 2026 test (dad's background): ADR in the spec step.
+- ADR 0010 (proposed): AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at 3 sites. Correct it?
+- ADR 0011 (proposed): NAPS 060438 at Toronto West reads +1.5 µg/m³ (r 0.82). Exclude it?
 - `/backup-check` (E: vs Seagate by sha256) has not run yet.
 - `data/prior` has one copy (Seagate only). Copy it to C: as a backup?
-- E: will be ~93% full. Where do future large downloads go?
+- E: is ~93% full. Where do future large downloads go?

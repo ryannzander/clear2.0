@@ -1,10 +1,15 @@
-# Study domain of the `grid` part. Loaded by clear.viz.map_domain() for map extents.
-# Spec: methodology/grid.md (not written yet; Phase 2). Part status: STATUS.md, row `grid`.
+# Constants of the `grid` part.
+# Spec: methodology/grid.md · ADR: decisions/0006-grid-0p1-toronto-cells.md
+toronto_grid:
+  cell_size_deg: 0.1          # issue #2; edges on multiples of this (methodology/grid.md#build-cells)
+  min_city_frac: 0.0      # a cell is Toronto if city_frac > this; 0 = any overlap (ADR 0006)
+
+# Study domain, loaded by clear.viz.map_domain() for map extents. Phase 2 (issues #3-#5).
 # PROVISIONAL: every value below is a Phase 0 placeholder carried over from the old
-# "1000 km domain" folder names (STATUS.md). The grid spec, or an ADR, confirms or
+# "1000 km domain" folder names (STATUS.md). The Phase 2 grid spec, or an ADR, confirms or
 # replaces them; until then nothing outside figures may depend on them.
 domain:
   provisional: true
   center_lat_deg: 43.6532    # PROVISIONAL: Toronto (City Hall), not yet checked against old docs
   center_lon_deg: -79.3832   # PROVISIONAL: as above
-  half_width_km: 1000        # PROVISIONAL: "1000 km domain" read as +/-1000 km; could mean 1000 km across. Open question in STATUS.md; shape (square vs radius) is for the spec
+  half_width_km: 1000        # PROVISIONAL: "1000 km domain" read as +/-1000 km; could mean 1000 km across. Phase 2 (issue #4)

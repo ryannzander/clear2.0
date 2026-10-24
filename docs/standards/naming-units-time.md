@@ -36,6 +36,8 @@ A unit suffix is mandatory on every physical column, variable and config key.
 | `_m` | metres | Heights, small distances. |
 | `_h` | hours | Durations, lags (`lag_h`). |
 | `_min` | minutes | Sub-hourly durations and sampling intervals. |
+| `_bytes` | bytes | File and download sizes (`size_bytes`). |
+| `_s` | seconds | Short durations such as network timeouts (`_TIMEOUT_S`). |
 | `_pct` | percent, 0-100 | Use `_frac` for 0-1. |
 | `_frac` | fraction, 0-1 | |
 | `_hpa` | hectopascal | Pressure. |
@@ -67,8 +69,8 @@ A unit suffix is mandatory on every physical column, variable and config key.
 | Hour-beginning (HB) | Start of the interval | 13:00-14:00 |
 | Hour-ending (HE) | End of the interval | 12:00-13:00 |
 
-- **PROVISIONAL:** `time_utc` in hourly tables is hour-beginning. An ADR (`proposed`)
-  confirms or changes it in the Phase 1 spec step. Until then, convert HE sources by subtracting 1 h.
+- `time_utc` in hourly tables is hour-beginning ([ADR 0005](../../decisions/0005-time-utc-hour-beginning.md)).
+  Convert HE sources by subtracting 1 h.
 - Hourly tables hold on-the-hour stamps only. Test: `time_utc.dt.minute == 0`.
 - Instantaneous values, interval means and accumulations are labelled differently by
   sources. The data card states which each variable is.
@@ -97,10 +99,10 @@ data card is written, then copied into the card's `time_convention` field.
 
 | Source | Zone / DST | Hour label | Native interval |
 |---|---|---|---|
-| NAPS | to verify in data card | to verify in data card | to verify in data card |
-| Ontario MECP | to verify in data card | to verify in data card | to verify in data card |
+| NAPS | UTC−5 all year, no DST | hour-ending | 1 h ([card](../../knowledge/data/naps-hourly-pm25.md)) |
+| Ontario MECP | EST (UTC−5), no DST | hour-ending (observed, EXP-003) | 1 h ([card](../../knowledge/data/mecp-hourly-pm25.md)) |
 | US EPA AQS (88101, 88502) | to verify in data card | to verify in data card | to verify in data card |
-| AirNow | to verify in data card | to verify in data card | to verify in data card |
+| AirNow | UTC | hour-beginning | 1 h ([card](../../knowledge/data/airnow-hourlyaqobs.md)) |
 | PurpleAir | to verify in data card | to verify in data card | to verify in data card |
 | ERA5 | to verify in data card | to verify in data card | to verify in data card |
 | NOAA HMS smoke | to verify in data card | to verify in data card | to verify in data card |
@@ -109,10 +111,10 @@ data card is written, then copied into the card's `time_convention` field.
 
 ## Station IDs
 
-**PROVISIONAL.** Format `<source>:<id>`, confirmed in `methodology/stations.md` (Phase 1).
+Format `<source>:<id>`, set by [methodology/stations.md](../../methodology/stations.md#read-sources).
 
 - `<source>` is the lowercase source key from the GLOSSARY code-name column: `naps:<id>`,
   `purpleair:<id>`.
 - `<id>` is the provider's identifier as a string, exactly as published (keep leading zeros).
 - No spaces. Dtype is `string`, never integer.
-- A site that reports to two networks gets two IDs. How they are linked is a spec question.
+- A site that reports to two networks gets two IDs; `site_id` links them (ADR 0008).

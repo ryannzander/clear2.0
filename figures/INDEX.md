@@ -11,4 +11,6 @@ Headline figures need Ryan's approval before `headline: true`.
 
 Line format: `- [fig_<slug>](out/fig_<slug>.md) — what it shows · preset · headline: false|true`.
 
+- [fig_toronto-stations-grid](out/fig_toronto-stations-grid.md) — City boundary, 0.1° cells (grey = no active site), stations by source (#2) · paper-2col · headline: false
+- [fig_station-completeness](out/fig_station-completeness.md) — fraction of hours present per Toronto station and year, splits marked (#1) · paper-2col · headline: false
 - [fig_style-tokens](out/fig_style-tokens.md) — the figure language: alert colors, source colors, sequential/diverging maps, type scale · paper-2col · headline: false

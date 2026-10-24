@@ -33,7 +33,15 @@ def test_tokens_load_and_cover_every_role_group():
     tokens = viz.load_tokens()
     assert tokens.alert_levels.provisional is True
     assert set(tokens.alert_levels.order) == set(tokens.alert_levels.colors)
-    assert set(tokens.sources) == {"naps", "mecp", "aqs", "purpleair", "satellite", "era5"}
+    assert set(tokens.sources) == {
+        "naps",
+        "mecp",
+        "aqs",
+        "purpleair",
+        "satellite",
+        "era5",
+        "airnow",
+    }
     assert set(tokens.sources) == set(tokens.source_labels)
     assert len(tokens.categorical) == 8
 

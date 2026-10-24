@@ -1,0 +1,6 @@
+# Train / validation / test years (calendar years, UTC), inclusive.
+# ADR: decisions/0001-data-split.md · Spec: methodology/stations.md#completeness
+splits:
+  train: {first_year: 2021, last_year: 2024}
+  val: {first_year: 2025, last_year: 2025}
+  test: {first_year: 2026, last_year: 2026}

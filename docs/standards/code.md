@@ -14,14 +14,16 @@ Names and units: [naming-units-time.md](naming-units-time.md). Toolchain: `uv` (
 | `src/clear/schemas/` | pandera schemas; shared checks in `common.py`. |
 | `src/clear/timeutil.py` | Source timestamps → tz-aware UTC. |
 | `src/clear/viz/` | Tokens, style, figure helpers ([figures.md](figures.md)). |
+| `src/clear/ingest/` | Fetch modules, one per source (`/ingest`, `.claude/skills/ingest/SKILL.md`). |
 
 - No spec, no module: create a part module only after `methodology/<part>.md` exists.
-  Infrastructure (`config`, `schemas`, `timeutil`, `viz`, `cli`) is exempt.
+  Infrastructure (`config`, `schemas`, `timeutil`, `viz`, `cli`, `ingest`) is exempt.
 - Parts import `config`, `schemas`, `timeutil`. `src/` never imports `figures/`,
   `notebooks/` or `scripts/`.
 - Public names go in `__all__`. New module → add one line to `src/clear/INDEX.md`.
-- CLI (typer): every runnable step is `uv run clear <group> <command>`. A command is thin:
-  parse args, call a function, print one result line. Inputs are arguments, no hidden
+- CLI (typer): every runnable step is `uv run clear <group> <command>`, except fetch modules,
+  which run as `uv run python -m clear.ingest.<source>` (ingest skill, step 3). A command is
+  thin: parse args, call a function, print one result line. Inputs are arguments, no hidden
   globals, non-zero exit on failure.
 
 ## Notebooks

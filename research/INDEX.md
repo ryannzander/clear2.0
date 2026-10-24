@@ -10,8 +10,9 @@ Scaffold from the template with `/experiment`. Agents read the README, never `ml
 - [_template/README.md](experiments/_template/README.md) — experiment README template · template · copy, don't edit
 - [_template/metrics.json](experiments/_template/metrics.json) — metrics skeleton · template · copy, don't edit
 
-No experiments yet. The first (EXP-001–003) answer Phase 1. Line format for experiments:
-`- [EXP-NNN-slug](experiments/EXP-NNN-slug/README.md) — hypothesis · planned|running|done|abandoned · headline result`.
+- [EXP-001-toronto-gov-stations](experiments/EXP-001-toronto-gov-stations/README.md) — Toronto government stations, years active, missing data (#1) · done · 24 stations = 11 sites; 4 sites complete in every split
+- [EXP-002-toronto-grid-0p1](experiments/EXP-002-toronto-grid-0p1/README.md) — one government station per 0.1° Toronto cell? (#2) · done · no: 12 of 17 cells have no active site
+- [EXP-003-station-overlap-ab](experiments/EXP-003-station-overlap-ab/README.md) — merged vs separate series (#1) · done · partly supported: merged ≥ best station everywhere; 060438 and AirNow offset not interchangeable
 
 ## Literature
 
@@ -21,6 +22,7 @@ No experiments yet. The first (EXP-001–003) answer Phase 1. Line format for ex
 
 Append-only daily log, one file per day: `log/YYYY-MM-DD.md`. Newest first below.
 
+- [log/2026-10-24.md](log/2026-10-24.md) — Phase 1 built: catalogue, specs, ADRs 0001–0009, stations + grid, EXP-001–003 · done · next is Phase 2 (domain)
 - [log/2026-10-22.md](log/2026-10-22.md) — raw copy to E: finished, first full inventory · done · 255,640 originals hashed
 - [log/2026-10-20.md](log/2026-10-20.md) — R&D system designed, Phase 0 scaffold built · done · next is Phase 1 on 2026-10-21
 

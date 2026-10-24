@@ -21,7 +21,7 @@ updated: YYYY-MM-DD
 
 | Name | Source dataset / data card | Units | Time convention |
 |---|---|---|---|
-| `<name>` | `knowledge/data/<dataset-slug>.md` | `<unit>` | `<filled in Phase 2>` |
+| `<name>` | `knowledge/data/<dataset-slug>.md` | `<unit>` | `<unknown>` |
 
 ## Outputs
 
@@ -47,7 +47,7 @@ updated: YYYY-MM-DD
 
 | Name | Value | Config key | Justification / ADR |
 |---|---|---|---|
-| `<name>` | `<filled in Phase 2>` | `config/<file>.yaml: <key>` | `<mirror path or decisions/NNNN-slug.md>` |
+| `<name>` | `<unknown>` | `config/<file>.yaml: <key>` | `<mirror path or decisions/NNNN-slug.md>` |
 
 ## Decisions
 

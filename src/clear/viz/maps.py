@@ -10,7 +10,7 @@ import importlib
 
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
-from pydantic import Field
+from pydantic import ConfigDict, Field
 
 from clear.config import ConfigModel, load_config
 from clear.viz.tokens import MapProjection, load_tokens
@@ -35,6 +35,9 @@ class MapDomain(ConfigModel):
 
 
 class _GridConfig(ConfigModel):
+    # The grid part owns the other keys of grid.yaml (clear.grid.cells validates them).
+    model_config = ConfigDict(extra="ignore", frozen=True)
+
     domain: MapDomain
 
 
@@ -71,8 +74,15 @@ def map_domain() -> MapDomain:
     return load_config("grid", _GridConfig).domain
 
 
-def map_axes(fig: Figure, nrows: int = 1, ncols: int = 1, index: int = 1) -> Axes:
-    """Add a map panel in the CLEAR projection, zoomed to the study domain.
+def map_axes(
+    fig: Figure,
+    nrows: int = 1,
+    ncols: int = 1,
+    index: int = 1,
+    *,
+    lonlat_box_deg: tuple[float, float, float, float] | None = None,
+) -> Axes:
+    """Add a map panel in the CLEAR projection, zoomed to the study domain or a lon/lat box.
 
     Method: docs/standards/figures.md#maps
 
@@ -86,6 +96,9 @@ def map_axes(fig: Figure, nrows: int = 1, ncols: int = 1, index: int = 1) -> Axe
         Figure to add the panel to.
     nrows, ncols, index : int
         Subplot grid position, as in ``Figure.add_subplot``.
+    lonlat_box_deg : tuple of float, optional
+        ``(lon_min, lon_max, lat_min, lat_max)`` in degrees to zoom to instead of the study
+        domain, e.g. the Toronto grid from ``clear.grid``. Take it from data or config.
 
     Returns
     -------
@@ -106,10 +119,14 @@ def map_axes(fig: Figure, nrows: int = 1, ncols: int = 1, index: int = 1) -> Axe
         central_latitude=proj.central_latitude_deg,
         standard_parallels=proj.standard_parallels_deg,
     )
+    ax: Axes = fig.add_subplot(nrows, ncols, index, projection=crs)
+    if lonlat_box_deg is not None:
+        # cartopy ships no type information (see the import above).
+        ax.set_extent(lonlat_box_deg, crs=ccrs.PlateCarree())  # pyright: ignore[reportAttributeAccessIssue, reportUnknownMemberType]
+        return ax
     domain = map_domain()
     x_m, y_m = crs.transform_point(domain.center_lon_deg, domain.center_lat_deg, ccrs.Geodetic())
     half_m = domain.half_width_km * _M_PER_KM
-    ax: Axes = fig.add_subplot(nrows, ncols, index, projection=crs)
     # Limits in the map's own projected metres: same as GeoAxes.set_extent(..., crs=crs).
     ax.set_xlim(x_m - half_m, x_m + half_m)
     ax.set_ylim(y_m - half_m, y_m + half_m)

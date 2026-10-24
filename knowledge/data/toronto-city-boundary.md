@@ -14,8 +14,8 @@ time_coverage: null               # static boundary; files dated 2012, CKAN last
 time_convention: not applicable (no time dimension)
 spatial_coverage: City of Toronto; bounds lon -79.639268..-79.115246, lat 43.581005..43.855466
 rows: 1                           # one polygon feature
-validation: unvalidated
-validation_report: null
+validation: validated
+validation_report: knowledge/data/toronto-city-boundary.validation.md
 ---
 
 # toronto-city-boundary
@@ -69,4 +69,4 @@ Council authorizes the Boundary … to change"; update frequency "not planned".
   under the Open Government Licence – Toronto."
 
 ## Validation
-`unvalidated` — no report yet. 2026-10-24.
+`validated` — [toronto-city-boundary.validation.md](toronto-city-boundary.validation.md), 2026-10-24.

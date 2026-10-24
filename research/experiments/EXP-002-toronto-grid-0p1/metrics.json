@@ -1,0 +1,20 @@
+{
+  "experiment": "EXP-002",
+  "git_commit": "the commit that adds this file (git log -1 -- <this file>)",
+  "data_sha256": {
+    "toronto-city-boundary": "7c4b32f9d4532eedcb5f533973d6b55f27370dad7b2fa91b03cfb7942e8d0a4f",
+    "naps / mecp / airnow": "per file in data/sources.yaml"
+  },
+  "config": "config/grid.yaml, config/splits.yaml",
+  "metrics": {
+    "cell_size_deg": 0.1,
+    "cells_built": 24,
+    "toronto_cells": 17,
+    "toronto_cells_with_0_active_sites": 12,
+    "toronto_cells_with_1_active_site": 4,
+    "toronto_cells_with_2plus_active_sites": 1,
+    "toronto_cells_with_any_site_ever": 6,
+    "active_since_utc": "2021-01-01T00:00:00+00:00"
+  },
+  "notes": "metrics = the JSON of `uv run clear grid build --json`."
+}
