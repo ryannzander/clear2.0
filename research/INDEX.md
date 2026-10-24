@@ -31,4 +31,4 @@ Append-only daily log, one file per day: `log/YYYY-MM-DD.md`. Newest first below
 `reviews/` holds optional written review notes for big changes, committed.
 The pass/fail record of the latest review is `.review/last.json` (gitignored).
 
-No review notes yet.
+- [reviews/phase1-round3-minors.md](reviews/phase1-round3-minors.md) — 15 deferred minors from the Phase 1 review (8d1bb27) · open · fix when stations/grid are next touched
