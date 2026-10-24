@@ -7,8 +7,8 @@ Line format: `- [name](path) — what it is · status · key fact`.
 
 ## Sub-indexes
 
-- [docs/INDEX.md](docs/INDEX.md) — text mirrors of methodology docs, one per logical doc · empty until Phase 1 · see that file
-- [data/INDEX.md](data/INDEX.md) — data cards (and validation reports) for every dataset · empty until Phase 1 · see that file
+- [docs/INDEX.md](docs/INDEX.md) — text mirrors of methodology docs, one per logical doc · Phase 1 mirrors (stations, grid, data completeness, AirNow) · see that file
+- [data/INDEX.md](data/INDEX.md) — data cards (and validation reports) for every dataset · Phase 1 cards · see that file
 
 ## Competitions (fenced)
 
@@ -16,7 +16,7 @@ Competition, pitch and video material is outside the research scope. It sits in
 `archive/competitions/` and is **not mirrored**. Agents go there only when Ryan asks.
 Each folder gets one line here, added by `/map-refresh`.
 
-No competition folders mapped yet. Lines appear after the first `/map-refresh` (Phase 1, from 2026-10-21).
+No competition folders mapped yet: Phase 1 files only what the stations and grid stage reads, so competition material is not filed yet. Lines appear when a later `/map-refresh` files it.
 
 ## Generated files
 

@@ -2,7 +2,7 @@ folder,area,files,bytes,mapped,unmapped,stale,superseded,junk
 CLEAR 2.0 (misc docs),legacy,2,8192,0,0,0,0,2
 CLEAR 2.0 (misc docs)/CAYIA Innovation Contest,legacy,217,1679608493,0,105,0,0,112
 CLEAR 2.0 (misc docs)/Conrad,legacy,28,10518115,0,12,0,0,16
-CLEAR 2.0 (misc docs)/Documents,legacy,800,611715528,0,377,0,0,423
+CLEAR 2.0 (misc docs)/Documents,legacy,752,605240860,0,372,0,0,380
 CLEAR 2.0 (misc docs)/Pitches,legacy,188,321155541,0,87,0,0,101
 RAW Data,legacy,9,351512,0,2,0,0,7
 RAW Data/AB Provincial - Hourly PM2.5 2000-2025,legacy,30,547094251,0,30,0,0,0
@@ -27,6 +27,8 @@ RAW Data/Sentinel-5P TROPOMI AAI 34N,legacy,182,1105670986,0,90,0,0,92
 RAW Data/era5_blh,legacy,8,1611003640,0,8,0,0,0
 RAW Data/era5_upper_wind,legacy,96,5678894855,0,96,0,0,0
 RAW Data/era5_wind,legacy,9,3251109474,0,9,0,0,0
+archive/Documents,archive,5,6298540,3,0,0,2,0
+archive/seagate,archive,51,28472419,51,0,0,0,0
 data/prior,prior,32,299922,0,2,0,0,30
 data/prior/analysis,prior,500,6277278839,0,234,0,0,266
 data/prior/aqm_pm25_forecast_cells,prior,4908,8908416993,0,2454,0,0,2454
@@ -54,14 +56,15 @@ data/prior/master,prior,4,250858715,0,2,0,0,2
 data/prior/models,prior,201,374950531,0,95,0,0,106
 data/prior/plume_analysis,prior,11023,69557296,0,4899,0,0,6124
 data/prior/rap_smoke_cells,prior,3988,2414538488,0,1994,0,0,1994
-data/prior/stations,prior,52,797230,0,26,0,0,26
+data/prior/stations,prior,52,797230,26,0,0,0,26
 data/prior/training,prior,25,7193964960,0,12,0,0,13
 data/raw,raw,1,9563,0,1,0,0,0
-data/raw/AirNow,raw,194,768821566,0,194,0,0,0
+data/raw/AirNow,raw,194,768821566,194,0,0,0,0
 data/raw/BlueSky Canada (UBC),raw,3558,296625625747,0,3558,0,0,0
 data/raw/CAMS global forecasts,raw,147,14782691819,0,147,0,0,0
 data/raw/CWFIS Fire M3,raw,17,874602661,0,17,0,0,0
-data/raw/Canada Government Monitors,raw,193,3420918633,0,193,0,0,0
+data/raw/Canada Government Monitors,raw,193,3420918633,59,134,0,0,0
+data/raw/City of Toronto boundary,raw,1,195966,1,0,0,0,0
 data/raw/EPA - USA Hourly PM25 2000-2026,raw,120,46755566417,0,120,0,0,0
 data/raw/FIRMS,raw,4,35850824,0,4,0,0,0
 data/raw/Firework,raw,2924,53879606064,0,2924,0,0,0
@@ -71,4 +74,5 @@ data/raw/Reference boundaries (Natural Earth),raw,3,6280065,0,3,0,0,0
 data/raw/Sentinel-5P TROPOMI,raw,503,2742159067,0,503,0,0,0
 data/raw/era5_land_wind,raw,90,28210751687,0,90,0,0,0
 data/raw/era5_wind,raw,585,166528514640,0,585,0,0,0
-inbox/seagate,inbox,805,987971550,0,805,0,0,0
+data/raw/seagate,raw,4,4397890,4,0,0,0,0
+inbox/seagate,inbox,750,955101241,0,750,0,0,0

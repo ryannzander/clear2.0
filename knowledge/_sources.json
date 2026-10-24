@@ -1,1 +1,121 @@
-{}
+{
+  "archive/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.docx": {
+    "mirror": "knowledge/docs/documents-23-data-completeness-clear2-data-completeness-continental.md",
+    "sha256": "6f6b906207a56efda5666b220e786f3b78539c1c592572bb84791fb694ec4875"
+  },
+  "archive/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.pdf": {
+    "mirror": "knowledge/docs/documents-23-data-completeness-clear2-data-completeness-continental.md",
+    "sha256": null,
+    "alias_of": "archive/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.docx"
+  },
+  "archive/seagate/Documents/04. Toronto Stations/CLEAR_2.0_Mean_vs_Max_Methodology.docx": {
+    "mirror": "knowledge/docs/seagate-documents-04-toronto-stations-clear-2-0-mean-vs-max-methodology.md",
+    "sha256": "376e266c9c8a2f72bf3b5f0fcab5f5b738abd1f6c2bdd509c6607555e963d6c9"
+  },
+  "archive/seagate/Documents/04. Toronto Stations/Toronto_PM25_Station_Statistical_Analysis.docx": {
+    "mirror": "knowledge/docs/seagate-documents-04-toronto-stations-toronto-pm25-station-statistical-analysis.md",
+    "sha256": "77f42f803433d7d1bb4c8430cb3af316b35ad37238baf769a072d60d9ed97fd7"
+  },
+  "archive/seagate/Documents/15. The Grid Approach/The_Grid_Approach.docx": {
+    "mirror": "knowledge/docs/seagate-documents-15-the-grid-approach-the-grid-approach.md",
+    "sha256": "f802b4c8b664dd76a1461161b5b89e8b3ddec8dd84056da046c5543da69a45e6"
+  },
+  "archive/seagate/Documents/15. The Grid Approach/The_Grid_Methodology.docx": {
+    "mirror": "knowledge/docs/seagate-documents-15-the-grid-approach-the-grid-methodology.md",
+    "sha256": "c7ac53d3ee474c16734e6ddd4ca6d06637f3cdb8a13b5412f733133b27df9796"
+  },
+  "archive/seagate/Documents/15. The Grid Approach/The_Grid_Methodology.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-15-the-grid-approach-the-grid-methodology.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/15. The Grid Approach/The_Grid_Methodology.docx"
+  },
+  "archive/seagate/Documents/19. Building Dynamic Grid/Building_the_Dynamic_Grid_CLEAR_Standard_Grid.docx": {
+    "mirror": "knowledge/docs/seagate-documents-19-building-dynamic-grid-building-the-dynamic-grid-clear-standard-grid.md",
+    "sha256": "5fe4e620b42d2ca2534b4da48c22ac2a68b2524203eb82bcc749bb9a51d003fc"
+  },
+  "archive/seagate/Documents/19. Building Dynamic Grid/Choosing_the_Alert_Radius_48h_Warning.docx": {
+    "mirror": "knowledge/docs/seagate-documents-19-building-dynamic-grid-choosing-the-alert-radius-48h-warning.md",
+    "sha256": "ede8f66254473f7048ad8449137ad967cc9d7a4882426f6330d4d39649ab5e68"
+  },
+  "archive/seagate/Documents/19. Building Dynamic Grid/Choosing_the_Alert_Radius_48h_Warning.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-19-building-dynamic-grid-choosing-the-alert-radius-48h-warning.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/19. Building Dynamic Grid/Choosing_the_Alert_Radius_48h_Warning.docx"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.docx": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-data-completeness-continental.md",
+    "sha256": "6923258307ab02e3e4c0b6ac92086b8992e146065095d0414af8a811ebefdb2e"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-data-completeness-continental.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Completeness_Continental.docx"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Timeline_2018-2026.docx": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-data-timeline-2018-2026.md",
+    "sha256": "3d821cc58547ae948146f1007e0d2b1f18f09169cd8258d2c40fe97e9e083067"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Timeline_2018-2026.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-data-timeline-2018-2026.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/23. Data Completeness/CLEAR2_Data_Timeline_2018-2026.docx"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Validation_and_Test_Data_2025-2026.docx": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-validation-and-test-data-2025-2026.md",
+    "sha256": "492d64a8e5f9a5c910d7ee33c988ee9add18cf82b28d7a86c20e2fba9cc4f72d"
+  },
+  "archive/seagate/Documents/23. Data Completeness/CLEAR2_Validation_and_Test_Data_2025-2026.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-23-data-completeness-clear2-validation-and-test-data-2025-2026.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/23. Data Completeness/CLEAR2_Validation_and_Test_Data_2025-2026.docx"
+  },
+  "archive/seagate/Documents/35. AirNow/CLEAR2_AirNow_Summary.docx": {
+    "mirror": "knowledge/docs/seagate-documents-35-airnow-clear2-airnow-summary.md",
+    "sha256": "3c4b1acfe720f61a6327a94d0fb15c650683632a00375bd0cb864e62c6959aac"
+  },
+  "archive/seagate/Documents/35. AirNow/CLEAR2_AirNow_Summary.pdf": {
+    "mirror": "knowledge/docs/seagate-documents-35-airnow-clear2-airnow-summary.md",
+    "sha256": null,
+    "alias_of": "archive/seagate/Documents/35. AirNow/CLEAR2_AirNow_Summary.docx"
+  },
+  "data/prior/stations": {
+    "mirror": "knowledge/data/prior-stations.md",
+    "sha256": null
+  },
+  "data/raw/AirNow/HourlyAQObs 2019-2026": {
+    "mirror": "knowledge/data/airnow-hourlyaqobs.md",
+    "sha256": null
+  },
+  "data/raw/AirNow/HourlyData 2014-2019": {
+    "mirror": "knowledge/data/airnow-hourlydata-2014-2019.md",
+    "sha256": null
+  },
+  "data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)": {
+    "mirror": "knowledge/data/naps-hourly-pm25.md",
+    "sha256": null
+  },
+  "data/raw/Canada Government Monitors/Canada NAPS Hourly PM2.5 2000-2024 (whole year)/NAPS_Ontario_PM25_2000-2024_Summary.docx": {
+    "mirror": "knowledge/docs/data-raw-canada-government-monitors-canada-naps-hourly-pm2-5-2000-2024-whole-year-naps-ontario-pm25-2000-2024-summary.md",
+    "sha256": "8783daa36ee4c862bb0b70f41d6c9b94641877a01f54492c657e08d9da49bb58"
+  },
+  "data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)": {
+    "mirror": "knowledge/data/mecp-hourly-pm25.md",
+    "sha256": null
+  },
+  "data/raw/Canada Government Monitors/ON Provincial - Hourly PM2.5 - 2000-2025 (whole year)/Ontario_PM2.5_Summary_Report.docx": {
+    "mirror": "knowledge/docs/data-raw-canada-government-monitors-on-provincial-hourly-pm2-5-2000-2025-whole-year-ontario-pm2-5-summary-report.md",
+    "sha256": "8a296135584e99a7e3cd8bad375380585dfdb23c94b5d5e618acb13cd4f220d6"
+  },
+  "data/raw/City of Toronto boundary/toronto-boundary-wgs84.zip": {
+    "mirror": "knowledge/data/toronto-city-boundary.md",
+    "sha256": "7c4b32f9d4532eedcb5f533973d6b55f27370dad7b2fa91b03cfb7942e8d0a4f"
+  },
+  "data/raw/seagate/Documents/15. The Grid Approach": {
+    "mirror": "knowledge/data/legacy-grid-approach-tables.md",
+    "sha256": null
+  },
+  "data/raw/seagate/Documents/19. Building Dynamic Grid": {
+    "mirror": "knowledge/data/clear-standard-grid-csg1.md",
+    "sha256": null
+  }
+}
