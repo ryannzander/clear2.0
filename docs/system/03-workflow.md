@@ -1,76 +1,103 @@
 # 03 — Workflow
 
-Phases, the per-part loop, issues, and the start and end of every session.
+Phases, the stage loop inside each phase, issues, and the start and end of every session.
 Ryan has two gates: **ADRs / methodology decisions** and **headline results / figures**.
 Everything else (including data-validation sign-off) agents decide.
 
 ## Phases
 
+Each phase builds one stage of the forecasting system. It opens with questions (GitHub
+Issues) and closes when their answers are built, checked and posted on the Issues.
+
+| Phase | Stage | Opened by | Parts |
+|---|---|---|---|
+| 0 | Scaffold — this R&D system | — | — |
+| 1 | Stations + grid — Toronto government monitors, 0.1° grid | prompts 1–2 | `stations`, `grid` |
+| 2 | Domain — smoke directions, warning radius, cell size | prompts 3–5 | `grid` (domain), `lag-plume`, `era5-wind` |
+| later | target series → features → models → alerts → dashboard | — | the rest |
+
 ```mermaid
 flowchart LR
-    P0["0 Scaffold"] --> P1["1 Map"] --> P2["2 Spec"]
-    P2 -->|conflicts| ADR[("decisions/<br/>ADR proposed")]
+    P0["0 Scaffold"] --> P1["1 Stations + grid"] --> P2["2 Domain"]
+    P2 --> L["later: target series,<br/>features, models,<br/>alerts, dashboard"]
+```
+
+## The stage loop
+
+Every phase runs the same five steps, and only for what its stage reads and builds.
+An ADR can arise at any step (a golden-test mismatch, a new choice mid-build). It always
+goes through the same hexagon.
+
+```mermaid
+flowchart LR
+    CAT["catalogue<br/>what it reads"] --> SPEC["spec"]
+    SPEC -->|conflicts| ADR[("decisions/<br/>ADR proposed")]
     ADR --> G1{{"Ryan decides"}}
-    G1 --> P2
-    P2 -->|all ADRs decided| P3["3 Validate"] --> P4["4 Build"]
-    P4 --> G2{{"Ryan approves<br/>headline results"}}
+    G1 --> SPEC
+    SPEC -->|ADRs decided| VAL["validate"] --> BUILD["build"] --> ANS["answer"]
+    ANS --> G2{{"Ryan approves<br/>headline results"}}
     G2 --> H["headline: true"]
 ```
 
-An ADR can arise in any phase (a golden-test mismatch, a new choice mid-build). It always
-goes through the same hexagon.
+### Phase 0 — Scaffold (done)
 
-## Checklists and exit criteria
+`AGENTS.md`, `docs/`, `.claude/` agents, skills and hooks, `scripts/`, the `src/clear/`
+skeleton, `config/`, `tests/`, `figures/`, pre-commit, CI, private repo `clear2.0`.
+**Exit:** `uv run pre-commit run --all-files` passes; the first push to `main` is green.
 
-### Phase 0 — Scaffold
+### 1. Catalogue
 
-- [ ] `AGENTS.md`, `CLAUDE.md`, `STATUS.md`, `GLOSSARY.md`, `docs/`
-- [ ] `.claude/` agents, skills, hooks
-- [ ] `scripts/` (storage, inventory, intake, check_maps, guard_commit, check_review)
-- [ ] `src/clear/` skeleton, `config/`, `tests/`, `figures/`
-- [ ] Pre-commit installed, CI workflow, private GitHub repo `clear2.0`
+- [ ] Scoped intake: `intake.py plan --legacy`, plan edited to file only the doc folders
+      this stage reads; the rest waits for its phase
+- [ ] Mirrors of those docs; a data card (`unvalidated`) per dataset the stage reads,
+      `data/prior` reference cards included
+- [ ] Each card states time convention, missing-value codes and units; unclear = `unknown`
+- [ ] `/ingest` new raw datasets; a `sources.yaml` entry per dataset read
+- [ ] `uv run python scripts/storage.py` exits 0 (`data/raw`, `data/prior` online)
 
-**Exit:** `uv run pre-commit run --all-files` passes, first push to `main` is green in CI.
+**Exit:** every input has a card and a `sources.yaml` entry; `check_maps.py` passes.
 
-### Phase 1 — Map
+### 2. Spec
 
-- [ ] Ryan drops all data and docs in `inbox/` (legacy folders count as inbox sources)
-- [ ] `/map-refresh`: plan, apply, mirrors, data cards, INDEX files, inventory
-- [ ] `uv run python scripts/storage.py` exits 0 (`data/raw`, `data/prior` linked and online)
-- [ ] `/backup-check` against the Seagate (needs the four storage keys in `.env`, see [data.md](../standards/data.md#storage))
-- [ ] Every `data/prior/` folder has a data card (`unvalidated`)
-
-**Exit:** `inbox/` empty except README; `inventory.py --check` and `check_maps.py` pass;
-the `data/raw/` and `archive/` backups match the inventory.
-
-### Phase 2 — Spec
-
-- [ ] Methodologist confirms the final list of parts (STATUS lists them as provisional)
-- [ ] `/spec` per part from `methodology/_template.md`; Scout fills literature gaps
-- [ ] Every source conflict is an ADR (`status: proposed`) and an open question in the spec
+- [ ] `/spec` per part the stage builds, from `methodology/_template.md`; Scout fills gaps
+- [ ] Every source conflict or new choice is an ADR (`status: proposed`) and an open
+      question in the spec
+- [ ] Constants in `config/*.yaml`, each linked to its spec section or ADR
 - [ ] `GLOSSARY.md` covers every term the specs use
 
-**Exit:** each part has a spec; every ADR is decided by Ryan; no open question blocks Phase 3.
+**Exit:** each part has a spec; every ADR the build depends on is decided by Ryan.
 
-### Phase 3 — Validate
+### 3. Validate
 
-- [ ] `/validate-data` per dataset the specs need, against what its spec requires
+- [ ] `/validate-data` per dataset the stage reads, against what its spec requires
 - [ ] Report in `knowledge/data/<slug>.validation.md`; card `validation:` updated
 - [ ] Time conventions normalized and documented in each card
 - [ ] Golden-test targets listed: numbers old docs reported and the code must reproduce
 
-**Exit:** every needed dataset is `validated`, or `partial` with the gap stated in its report.
+**Exit:** every dataset is `validated`, or `partial` with the gap stated in its report.
 The Data Steward signs off; Ryan is not a gate here.
 
-### Phase 4 — Build
+### 4. Build
 
-Dependency order: target series → features → models → alerts → dashboard.
-Each part runs the loop below. The `ml` dependency group arrives here.
+Each part runs the per-part loop below. The `ml` dependency group arrives with the models
+phase.
 
-**Exit per part:** tests (unit, contract, golden) pass; `/method-check` clean; `/review` pass;
-STATUS stage set to `built`. **Exit for the phase:** all parts built.
+**Exit per part:** tests (unit, contract, golden) pass; outputs pass their pandera schemas;
+`/method-check` clean; `/review` pass; STATUS stage set to `built`.
+
+### 5. Answer
+
+- [ ] `/experiment` per opening question: `EXP-NNN-slug/` with README + `metrics.json`
+- [ ] `/figure` for each figure the answer needs
+- [ ] The Lead comments the result on each opening Issue; nothing is `headline: true`
+      without Ryan
+
+**Exit for the phase:** every opening Issue has a result comment; STATUS stages are
+`answered`; STATUS moves to the next phase.
 
 ## Per-part R&D loop
+
+Inside a phase, each part runs this loop from its spec to its STATUS stage.
 
 ```mermaid
 flowchart TD
@@ -105,7 +132,7 @@ flowchart TD
 | Figure | Figure Maker | `figures/src/fig_<slug>.py` + `out/` |
 | STATUS | Lead | stage column updated |
 
-Stages in STATUS: mapped → spec'd → validated → built.
+Stages in STATUS: catalogued → spec'd → validated → built → answered.
 
 ## GitHub Issue → experiment
 

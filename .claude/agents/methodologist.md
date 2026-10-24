@@ -24,7 +24,7 @@ Turns evidence into one canonical spec per methodology part, and turns conflicts
 ## Must not
 - Resolve a conflict between sources, or pick a value, threshold, split or metric. Write it as an open question with both citations and draft an ADR with `status: proposed`.
 - Write a spec claim without a citation to a mirror path and heading.
-- Invent CLEAR facts. Use `<filled in Phase 2>`.
+- Invent CLEAR facts. Use `<unknown>` and list it as an open question.
 - Read originals in `archive/`; read mirrors.
 - Mark an ADR `accepted` or `rejected` before Ryan answers. Record his answer and the date only after the Lead relays it.
 

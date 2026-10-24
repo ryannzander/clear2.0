@@ -68,7 +68,7 @@ A unit suffix is mandatory on every physical column, variable and config key.
 | Hour-ending (HE) | End of the interval | 12:00-13:00 |
 
 - **PROVISIONAL:** `time_utc` in hourly tables is hour-beginning. An ADR (`proposed`)
-  confirms or changes it in Phase 2. Until then, convert HE sources by subtracting 1 h.
+  confirms or changes it in the Phase 1 spec step. Until then, convert HE sources by subtracting 1 h.
 - Hourly tables hold on-the-hour stamps only. Test: `time_utc.dt.minute == 0`.
 - Instantaneous values, interval means and accumulations are labelled differently by
   sources. The data card states which each variable is.
@@ -97,19 +97,19 @@ data card is written, then copied into the card's `time_convention` field.
 
 | Source | Zone / DST | Hour label | Native interval |
 |---|---|---|---|
-| NAPS | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| Ontario MECP | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| US EPA AQS (88101, 88502) | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| AirNow | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| PurpleAir | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| ERA5 | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| NOAA HMS smoke | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| FIRMS | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
-| AOD product | to verify in data card (Phase 1) | to verify in data card (Phase 1) | to verify in data card (Phase 1) |
+| NAPS | to verify in data card | to verify in data card | to verify in data card |
+| Ontario MECP | to verify in data card | to verify in data card | to verify in data card |
+| US EPA AQS (88101, 88502) | to verify in data card | to verify in data card | to verify in data card |
+| AirNow | to verify in data card | to verify in data card | to verify in data card |
+| PurpleAir | to verify in data card | to verify in data card | to verify in data card |
+| ERA5 | to verify in data card | to verify in data card | to verify in data card |
+| NOAA HMS smoke | to verify in data card | to verify in data card | to verify in data card |
+| FIRMS | to verify in data card | to verify in data card | to verify in data card |
+| AOD product | to verify in data card | to verify in data card | to verify in data card |
 
 ## Station IDs
 
-**PROVISIONAL.** Format `<source>:<id>`, confirmed in `methodology/stations.md` (Phase 2).
+**PROVISIONAL.** Format `<source>:<id>`, confirmed in `methodology/stations.md` (Phase 1).
 
 - `<source>` is the lowercase source key from the GLOSSARY code-name column: `naps:<id>`,
   `purpleair:<id>`.

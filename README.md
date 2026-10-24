@@ -7,8 +7,8 @@ R&D workspace: methodology, data handling, code, experiments and figures.
 
 ## Status
 
-Phase 0 (scaffold). The R&D system is in place. Methodology specs, data cards and code
-come in later phases. Current state: [STATUS.md](STATUS.md).
+Phase 1 (stations + grid). Each phase builds one stage of the forecasting system:
+catalogue → spec → validate → build → answer. Current state: [STATUS.md](STATUS.md).
 
 ## Layout
 

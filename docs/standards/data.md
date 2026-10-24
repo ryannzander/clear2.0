@@ -119,7 +119,7 @@ One entry per raw dataset. Committed. Values below are placeholders.
 
 ## Validation reports
 
-Specs define what "valid" means, so validation (Phase 3) follows specs. `/validate-data`
+Specs define what "valid" means, so the validate step follows the spec step. `/validate-data`
 checks a dataset against its spec and writes the result.
 
 - Report: `knowledge/data/<dataset-slug>.validation.md`. Contents: spec section checked,
@@ -188,7 +188,7 @@ checks a dataset against its spec and writes the result.
 
 - Old pipeline outputs from earlier CLEAR work: ERA5/BlueSky/HRRR per-cell extracts,
   features, training sets, models.
-- Reference and golden numbers only. Not a pipeline input until Phase 3 validates it against
+- Reference and golden numbers only. Not a pipeline input until a validate step checks it against
   raw and an ADR approves reuse per dataset.
 - One folder data card per prior dataset: `source: data/prior/<folder>`,
   `validation: unvalidated`. Format: [writing.md](writing.md#data-card).

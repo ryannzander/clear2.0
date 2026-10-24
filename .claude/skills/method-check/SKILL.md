@@ -6,7 +6,7 @@ description: Use when code in src/clear/ should be checked against its methodolo
 # /method-check
 
 ## When
-After the Experimenter writes or changes a module, after a spec or ADR changes, or before Phase 4 sign-off of a part.
+After the Experimenter writes or changes a module, after a spec or ADR changes, or before build sign-off of a part.
 
 ## Inputs
 Module name (e.g. `clear.<part>`) and its spec `methodology/<part>.md`.

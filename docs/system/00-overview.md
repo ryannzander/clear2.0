@@ -7,7 +7,7 @@ section you need.
 |---|---|
 | [01-context-layer.md](01-context-layer.md) | inbox → archive/raw → mirrors, data cards, INDEX maps, hooks |
 | [02-agents.md](02-agents.md) | The roster, model split, who owns which skill, delegation |
-| [03-workflow.md](03-workflow.md) | Phases 0–4, the per-part R&D loop, Ryan's gates |
+| [03-workflow.md](03-workflow.md) | Phases (one per system stage), the stage loop, Ryan's gates |
 | [04-review-and-commit.md](04-review-and-commit.md) | Review gate, pre-commit, commit/push, CI |
 | [05-tooling.md](05-tooling.md) | uv, ruff, pyright, pytest, pre-commit, GitHub Actions |
 

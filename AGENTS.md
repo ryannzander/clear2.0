@@ -44,7 +44,8 @@ Owner: Ryan Zander (solo). Agents do the work; Ryan makes the methodology calls.
 | `docs/standards/` | Code, naming/units/time, data, figures, git, writing. | see below |
 
 The legacy folders `CLEAR 2.0 (misc docs)/` and `RAW Data/` are inbox sources until
-Phase 1 files them into `archive/` and `data/raw/`. Treat them exactly like `archive/`.
+intake files them into `archive/` and `data/raw/`; each phase files only what it reads.
+Treat them exactly like `archive/`.
 
 ## Hard rules
 
@@ -116,10 +117,13 @@ the only role that talks to Ryan. Specialists live in `.claude/agents/`.
 
 ## Phases
 
-0. **Scaffold** — this R&D system. 1. **Map** — inventory, mirrors, data cards.
-2. **Spec** — one spec per part; conflicts → ADRs for Ryan. 3. **Validate** — data
-against what the specs require. 4. **Build** — part by part in dependency order.
-Details and flowcharts: `docs/system/03-workflow.md`.
+Each phase builds one stage of the forecasting system and runs the same loop inside it:
+**catalogue** what it reads → **spec** (conflicts → ADRs for Ryan) → **validate** →
+**build** → **answer** the Issues that opened it. Catalogue only what the stage reads.
+0. **Scaffold** — this R&D system (done). 1. **Stations + grid** — Toronto government
+monitors and the 0.1° grid (prompts 1–2). 2. **Domain** — smoke directions, warning
+radius, cell size (prompts 3–5). Later: target series → features → models → alerts →
+dashboard. Details and flowcharts: `docs/system/03-workflow.md`.
 
 ## Standards — load only the one you need
 

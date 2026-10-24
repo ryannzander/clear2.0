@@ -24,7 +24,7 @@ Defined in `pyproject.toml`. Add a package to the group that matches its job.
 | `dev` | ruff, pyright, pytest, pre-commit, jupytext | everyone, CI |
 | `knowledge` | markitdown (docx, pdf, xlsx extras) | Librarian conversions |
 | `geo` | cartopy, geopandas, netcdf4 | maps, grids, ERA5 and satellite reads |
-| `ml` | torch (cu128), lightgbm, torch-geometric, mlflow | Phase 4 — **not added yet** |
+| `ml` | torch (cu128), lightgbm, torch-geometric, mlflow | models phase — **not added yet** |
 
 Add with `uv add --group <name> <package>`; core with `uv add <package>`. Commit `pyproject.toml`
 and `uv.lock` together.
@@ -72,7 +72,7 @@ Red CI on `main`: fix forward.
 
 ## Local MLflow
 
-Arrives with the `ml` group in Phase 4.
+Arrives with the `ml` group in the models phase.
 
 ```bash
 uv sync --group ml
@@ -120,4 +120,4 @@ uv run mlflow ui        # browse runs from ./mlruns
 | Record a review | `uv run python scripts/check_review.py record --verdict pass --reviewer "<provider/model>" --round N` |
 | Check a review | `uv run python scripts/check_review.py check` |
 | Convert a doc | `uv run markitdown <file> -o <out.md>` (normally via `/map-refresh`) |
-| MLflow UI (Phase 4) | `uv run mlflow ui` |
+| MLflow UI (models phase) | `uv run mlflow ui` |

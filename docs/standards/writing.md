@@ -119,7 +119,7 @@ Example (illustrative, not a real entry):
 - One row per term. Code name in backticks, snake_case. Units use the suffix table in
   [naming-units-time.md](naming-units-time.md); `—` if dimensionless.
 - Definition: one sentence. Established external terms get a plain definition; CLEAR-specific
-  terms point to their spec: `<defined in methodology/<slug>.md — Phase 2>`.
+  terms point to their spec: `<defined in methodology/<slug>.md>`.
 - Avoid: the aliases agents must not use in code or docs.
 - When a spec is written, replace the pointer with the spec's one-sentence definition.
 - Unsure of a fact: `<verify>`.
@@ -170,7 +170,7 @@ Ryan skims.
 - No filler or hype words ("comprehensive", "robust", "seamless"). No restating the brief.
 - Link instead of repeating. [AGENTS.md](../../AGENTS.md) is the single source for hard rules;
   each standard is the single source for its topic.
-- Never invent facts about CLEAR's methodology or data. Use `<filled in Phase 2>` or
+- Never invent facts about CLEAR's methodology or data. Use `<unknown>` or
   `<verify>`.
 - One idea per bullet. A table cell is a phrase, not a paragraph.
 - Dates are ISO (`2026-10-21`). Times carry a zone.

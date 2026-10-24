@@ -6,7 +6,7 @@ description: Use when a dataset has a card and its methodology spec exists, and 
 # /validate-data
 
 ## When
-Phase 3, or any time a dataset is refreshed. Specs define what "valid" means, so the spec must exist first.
+The validate step of each phase, or any time a dataset is refreshed. Specs define what "valid" means, so the spec must exist first.
 
 ## Inputs
 Dataset slug. Its card `knowledge/data/<slug>.md` and the spec `methodology/<part>.md`.

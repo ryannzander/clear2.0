@@ -10,7 +10,7 @@ Scaffold from the template with `/experiment`. Agents read the README, never `ml
 - [_template/README.md](experiments/_template/README.md) — experiment README template · template · copy, don't edit
 - [_template/metrics.json](experiments/_template/metrics.json) — metrics skeleton · template · copy, don't edit
 
-No experiments yet. The first appear in Phase 4. Line format for experiments:
+No experiments yet. The first (EXP-001–003) answer Phase 1. Line format for experiments:
 `- [EXP-NNN-slug](experiments/EXP-NNN-slug/README.md) — hypothesis · planned|running|done|abandoned · headline result`.
 
 ## Literature
@@ -21,6 +21,7 @@ No experiments yet. The first appear in Phase 4. Line format for experiments:
 
 Append-only daily log, one file per day: `log/YYYY-MM-DD.md`. Newest first below.
 
+- [log/2026-10-22.md](log/2026-10-22.md) — raw copy to E: finished, first full inventory · done · 255,640 originals hashed
 - [log/2026-10-20.md](log/2026-10-20.md) — R&D system designed, Phase 0 scaffold built · done · next is Phase 1 on 2026-10-21
 
 ## Reviews
