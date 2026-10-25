@@ -44,6 +44,7 @@ class StationsConfig(ConfigModel):
     negative_is_missing: bool
     source_priority: list[SourceName] = Field(min_length=1)
     overlap_mode: Literal["merged", "separate"]
+    merged_exclude_stations: list[str]
     crosswalk_max_distance_m: float = Field(gt=0.0)
     completeness_min_frac: float = Field(ge=0.0, le=1.0)
     registry_margin_deg: float = Field(ge=0.0)

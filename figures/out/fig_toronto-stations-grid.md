@@ -14,8 +14,8 @@ inputs:
 - path: data/raw/City of Toronto boundary/toronto-boundary-wgs84.zip
   sha256: 7c4b32f9d4532eedcb5f533973d6b55f27370dad7b2fa91b03cfb7942e8d0a4f
 script: figures/src/fig_toronto-stations-grid.py
-git_commit: cf5d49b-dirty
-generated_utc: '2026-10-24T22:40:19Z'
+git_commit: b288303-dirty
+generated_utc: '2026-10-25T00:07:03Z'
 ---
 
 # fig_toronto-stations-grid

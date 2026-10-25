@@ -20,7 +20,7 @@ City of Toronto, which years each was active, and how much data each is missing.
 - **Data versions:** `naps-hourly-pm25`, `mecp-hourly-pm25`, `airnow-hourlyaqobs`,
   `airnow-hourlydata-2014-2019`, `toronto-city-boundary` (sha256 in `data/sources.yaml`)
 - **Validation:** naps-hourly-pm25, mecp-hourly-pm25, airnow-hourlyaqobs, airnow-hourlydata-2014-2019 `partial` (Phase 1 read box; MECP hour label observed; AirNow preliminary), toronto-city-boundary `validated` (`knowledge/data/*.validation.md`)
-- **Config:** `config/stations.yaml`, `config/splits.yaml` (ADRs 0001–0005, 0007, 0008)
+- **Config:** `config/stations.yaml` (incl. `merged_exclude_stations`), `config/splits.yaml` (ADRs 0001–0005, 0007, 0008, 0010, 0011)
 - **Seed(s):** none (deterministic)
 - **Rerun:** `uv run clear stations build && uv run clear stations report --json out.json`; the `metrics` block of `metrics.json` is that JSON.
 
@@ -33,7 +33,7 @@ Linked by location (< 500 m), they are **11 physical sites**. Full table:
 | Site | Stations (years active) | Train 2021–24 | Val 2025 | Test 2026* |
 |---|---|---|---|---|
 | Toronto East (Kennedy/Lawrence) | NAPS 060410 (2002–24), MECP 33003 (2003–25), AirNow 000060410 (2023–26) | 0.99 | 1.00 | 0.98 |
-| Toronto West (Resources Rd.) | NAPS 060430 (2000–24), 060438 (2016–24), MECP 35125 (2003–25), AirNow 124000060430 (2023–26) | 1.00 | 1.00 | 0.98 |
+| Toronto West (Resources Rd.) | NAPS 060430 (2000–24), 060438 (2016–24, not in the merged series, ADR 0011), MECP 35125 (2003–25), AirNow 124000060430 (2023–26) | 0.99 | 1.00 | 0.98 |
 | Toronto North (Dufferin) | NAPS 060440 (2017–24), MECP 34021 (2017–25), AirNow 124000060440 (2023–26) | 0.99 | 0.99 | 0.98 |
 | Toronto Downtown (55 John St.) | NAPS 060445 (2019–24), MECP 31129 (2019–25), AirNow 124000060445 (2020–26) | 0.99 | 0.98 | 0.96 |
 | NAPS 060435 (43.611, −79.522) | NAPS 060435 (2010–24) | 0.90 | 0.00 | 0.00 |

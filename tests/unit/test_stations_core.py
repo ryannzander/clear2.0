@@ -97,7 +97,9 @@ def test_merged_series_prefers_priority_and_averages_same_source():
         ]
     )
     reg = pd.DataFrame({"station_id": ["airnow:1", "naps:3", "naps:4"], "site_id": ["naps:3"] * 3})
-    out = merged_series(hourly, reg, source_priority=["naps", "mecp", "airnow"])
+    out = merged_series(
+        hourly, reg, source_priority=["naps", "mecp", "airnow"], exclude_stations=[]
+    )
     assert out["source"].tolist() == ["airnow", "naps"]
     assert out["pm25_ugm3"].tolist() == [9.0, 5.0]
 
@@ -195,3 +197,38 @@ def test_toronto_report_years_in_source_calendar_and_merged_vs_best():
             "best_member": "naps:1",
         }
     ]
+
+
+def test_merged_series_leaves_out_excluded_stations():
+    hourly = pd.concat(
+        [
+            hours("naps:3", "naps", "2024-01-01 00:00", 1, 4.0),
+            hours("naps:4", "naps", "2024-01-01 00:00", 2, 6.0),
+        ]
+    )
+    reg = pd.DataFrame({"station_id": ["naps:3", "naps:4"], "site_id": ["naps:3"] * 2})
+    out = merged_series(hourly, reg, source_priority=["naps"], exclude_stations=["naps:4"])
+    assert out["pm25_ugm3"].tolist() == [4.0]  # naps:4 neither averaged in nor fills hour 2
+
+
+def test_merged_series_exclusion_lets_a_lower_priority_source_fill():
+    hourly = pd.concat(
+        [
+            hours("naps:4", "naps", "2024-01-01 00:00", 1, 6.0),  # excluded
+            hours("mecp:5", "mecp", "2024-01-01 00:00", 1, 5.0),
+            hours("naps:9", "naps", "2024-01-01 00:00", 1, 2.0),  # another site
+        ]
+    )
+    reg = pd.DataFrame(
+        {"station_id": ["naps:4", "mecp:5", "naps:9"], "site_id": ["naps:4", "naps:4", "naps:9"]}
+    )
+    out = merged_series(hourly, reg, source_priority=["naps", "mecp"], exclude_stations=["naps:4"])
+    assert out.set_index("site_id")["source"].to_dict() == {"naps:4": "mecp", "naps:9": "naps"}
+    assert out.set_index("site_id")["pm25_ugm3"].to_dict() == {"naps:4": 5.0, "naps:9": 2.0}
+
+
+def test_merged_series_rejects_unknown_excluded_station():
+    hourly = hours("naps:3", "naps", "2024-01-01 00:00", 1)
+    reg = pd.DataFrame({"station_id": ["naps:3"], "site_id": ["naps:3"]})
+    with pytest.raises(ValueError, match="naps:60438"):
+        merged_series(hourly, reg, source_priority=["naps"], exclude_stations=["naps:60438"])

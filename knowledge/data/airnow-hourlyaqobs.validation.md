@@ -24,6 +24,6 @@ Checks run by `notebooks/validate_phase1.py` on the Phase 1 build (`uv run clear
 
 - 517,158 raw rows in the read scope (City bounds ± 0.5°).
 - Sentinels, negatives and repeats stay in the interim table (lossless) and are removed or averaged in `processed/stations/hourly_pm25` (ADR 0007).
-- Preliminary data (card); AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at East, West, North (EXP-003): open question for Ryan.
+- Preliminary data (card); AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at East, West, North (EXP-003); used as published, offset noted (ADR 0010, decided 2026-10-24).
 - `PM25_Measured = 0` rows are not filtered (stations.md open question 2).
 - Scope: the Phase 1 read box only (City bounds +/- the registry margin); stations elsewhere in the card's coverage are not checked yet, so the result is at most partial.

@@ -63,13 +63,13 @@
       },
       "mean_present_frac": {
         "test": 0.3556,
-        "train": 0.4451,
+        "train": 0.4443,
         "val": 0.361
       },
       "hours_by_source": {
-        "airnow": 41165,
-        "mecp": 35210,
-        "naps": 1088311
+        "airnow": 41168,
+        "mecp": 35299,
+        "naps": 1087622
       }
     },
     "merged_vs_best_member": [
@@ -188,7 +188,7 @@
       {
         "site_id": "naps:060430",
         "split": "train",
-        "merged_frac": 1.0,
+        "merged_frac": 0.9912,
         "best_member_frac": 0.9897,
         "best_member": "naps:060430"
       },

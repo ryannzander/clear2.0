@@ -150,7 +150,7 @@ for source, slugs in (
             notes.append(f"Year mismatches: {json.dumps(bad_years)}")
         if source == "airnow":
             notes.append(
-                "Preliminary data (card); AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at East, West, North (EXP-003): open question for Ryan."
+                "Preliminary data (card); AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at East, West, North (EXP-003); used as published, offset noted (ADR 0010, decided 2026-10-24)."
             )
             notes.append("`PM25_Measured = 0` rows are not filtered (stations.md open question 2).")
         if source == "mecp":

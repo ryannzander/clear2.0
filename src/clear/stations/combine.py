@@ -13,14 +13,19 @@ MERGED_COLUMNS = ["site_id", "time_utc", "pm25_ugm3", "source"]
 
 
 def merged_series(
-    hourly: pd.DataFrame, registry: pd.DataFrame, *, source_priority: Sequence[str]
+    hourly: pd.DataFrame,
+    registry: pd.DataFrame,
+    *,
+    source_priority: Sequence[str],
+    exclude_stations: Sequence[str],
 ) -> pd.DataFrame:
     """One series per site: each hour takes the highest-priority source with a value.
 
     Method: methodology/stations.md#combine-sources
 
-    Stations of the same source within one site are averaged for that hour. The
-    ``separate`` mode is the hourly table itself (one series per ``station_id``).
+    Stations of the same source within one site are averaged for that hour; stations in
+    ``exclude_stations`` are left out (ADR 0011). The ``separate`` mode is the hourly table
+    itself (one series per ``station_id``).
 
     Parameters
     ----------
@@ -30,14 +35,27 @@ def merged_series(
         ``station_id`` and ``site_id``.
     source_priority : sequence of str
         Source keys, best first (``config/stations.yaml``).
+    exclude_stations : sequence of str
+        ``station_id`` values kept out of the merged series
+        (``config/stations.yaml: merged_exclude_stations``); may be empty.
 
     Returns
     -------
     pandas.DataFrame
         ``MERGED_COLUMNS``, unique on (``site_id``, ``time_utc``).
+
+    Raises
+    ------
+    ValueError
+        If an excluded ``station_id`` is not in ``registry`` (a typo would silently undo the
+        exclusion).
     """
+    unknown = sorted(set(exclude_stations) - set(registry["station_id"].astype(str)))
+    if unknown:
+        raise ValueError(f"merged_exclude_stations not in the registry: {unknown}")
     rank = {s: k for k, s in enumerate(source_priority)}
-    frame = hourly.merge(registry[["station_id", "site_id"]], on="station_id", how="inner")
+    kept = hourly[~hourly["station_id"].isin(list(exclude_stations))]
+    frame = kept.merge(registry[["station_id", "site_id"]], on="station_id", how="inner")
     frame["_rank"] = frame["source"].map(lambda s: rank.get(str(s), len(rank)))
     best = frame.groupby(["site_id", "time_utc"])["_rank"].transform("min")
     frame = frame[frame["_rank"] == best]

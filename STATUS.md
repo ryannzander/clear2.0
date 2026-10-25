@@ -33,23 +33,23 @@ Figures: `figures/out/fig_station-completeness`, `fig_toronto-stations-grid`. No
 - Validation: boundary `validated`; NAPS, MECP, AirNow ×2 `partial` (Phase 1 read box; reports in `knowledge/data/`).
 - Rebuild Phase 1: `uv run clear stations build && uv run clear grid build` (~30 s).
 
-## Decisions (ADRs 0001–0009, all accepted 2026-10-24)
+## Decisions (ADRs 0001–0011, all accepted 2026-10-24)
 
 Split 2021–24/2025/2026 · Toronto = City polygon · overlap A/B (merged default) · 75%
 completeness flag · `time_utc` hour-beginning · 0.1° cells, edges on multiples, any overlap
 counts · sentinels and negatives missing · sites = stations within 500 m · rebuild station
-years stand over old doc 04 (old hour-ending UTC labels, 1 km merge).
+years stand over old doc 04 (old hour-ending UTC labels, 1 km merge) · AirNow as published
+(offset noted) · NAPS 060438 out of merged West.
 
 ## Next 3 actions
 
 1. Ryan: look at EXP-001–003 and the two figures; say if any is headline material.
 2. Phase 2 catalogue: HMS smoke, ERA5 wind, McGuire-2026 paper (old folder 27).
-3. Phase 2 open questions below (AirNow offset, 060438, `PM25_Measured = 0` rows).
+3. Deferred review minors: `research/reviews/phase1-round3-minors.md`.
 
 ## Open questions for Ryan
 
-- ADR 0010 (proposed): AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at 3 sites. Correct it?
-- ADR 0011 (proposed): NAPS 060438 at Toronto West reads +1.5 µg/m³ (r 0.82). Exclude it?
+- AirNow rows with `PM25_Measured = 0` are not filtered (stations.md open question 2). Filter them?
 - `/backup-check` (E: vs Seagate by sha256) has not run yet.
 - `data/prior` has one copy (Seagate only). Copy it to C: as a backup?
 - E: is ~93% full. Where do future large downloads go?

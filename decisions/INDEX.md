@@ -17,5 +17,5 @@ Line format: `- [NNNN-slug](NNNN-slug.md) — the question · status · the answ
 - [0007-station-value-qc](0007-station-value-qc.md) — which hourly values count as missing · accepted · sentinels + negatives; repeats averaged
 - [0008-site-crosswalk-500m](0008-site-crosswalk-500m.md) — linking stations across networks · accepted · within 500 m = one site
 - [0009-golden-station-years](0009-golden-station-years.md) — old doc-04 station years vs rebuild · accepted · rebuild stands; doc values kept as `reported`
-- [0010-airnow-offset](0010-airnow-offset.md) — AirNow 0.3–0.5 µg/m³ above NAPS/MECP at 3 sites · proposed · recommend: leave as published
-- [0011-naps-060438-west-site](0011-naps-060438-west-site.md) — NAPS 060438 averaged into Toronto West · proposed · recommend: exclude from merged
+- [0010-airnow-offset](0010-airnow-offset.md) — AirNow 0.3–0.5 µg/m³ above NAPS/MECP at 3 sites · accepted · leave as published, noted
+- [0011-naps-060438-west-site](0011-naps-060438-west-site.md) — NAPS 060438 averaged into Toronto West · accepted · excluded from the merged series

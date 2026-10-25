@@ -19,6 +19,8 @@ decisions:
   - decisions/0007-station-value-qc.md
   - decisions/0008-site-crosswalk-500m.md
   - decisions/0009-golden-station-years.md
+  - decisions/0010-airnow-offset.md
+  - decisions/0011-naps-060438-west-site.md
 updated: 2026-10-24
 ---
 
@@ -105,6 +107,8 @@ counted in the next UTC year (ADR 0009).
 `overlap_mode` (ADR 0003) selects the series later parts use. `separate`: one series per
 station, as read. `merged`: one series per site; each hour takes the value of the
 highest-priority source that has one (same-source stations averaged) and records `source`.
+Stations in `merged_exclude_stations` stay in the registry and in `separate` mode but are left
+out of `merged` (ADR 0011: NAPS 060438). AirNow values are used as published (ADR 0010).
 EXP-003 compares the two per site.
 
 ## Constants
@@ -115,6 +119,7 @@ EXP-003 compares the two per site.
 | negative values missing | true | `config/stations.yaml: negative_is_missing` | ADR 0007 |
 | source priority | naps, mecp, airnow | `config/stations.yaml: source_priority` | ADR 0003 |
 | overlap mode | merged | `config/stations.yaml: overlap_mode` | ADR 0003 |
+| merged exclusions | naps:060438 | `config/stations.yaml: merged_exclude_stations` | ADR 0011 |
 | crosswalk distance | 500 m | `config/stations.yaml: crosswalk_max_distance_m` | ADR 0008 |
 | completeness threshold | 0.75 | `config/stations.yaml: completeness_min_frac` | ADR 0004 |
 | registry margin | 0.5° | `config/stations.yaml: registry_margin_deg` | context for figures; Toronto itself uses the polygon |
@@ -130,6 +135,8 @@ EXP-003 compares the two per site.
 - [0007-station-value-qc](../decisions/0007-station-value-qc.md) — what counts as missing
 - [0008-site-crosswalk-500m](../decisions/0008-site-crosswalk-500m.md) — sites within 500 m
 - [0009-golden-station-years](../decisions/0009-golden-station-years.md) — rebuild years stand over doc 04
+- [0010-airnow-offset](../decisions/0010-airnow-offset.md) — AirNow used as published, offset noted
+- [0011-naps-060438-west-site](../decisions/0011-naps-060438-west-site.md) — 060438 left out of merged West
 
 ## Open questions
 
@@ -137,10 +144,10 @@ EXP-003 compares the two per site.
    MECP vs NAPS agree best at lag 0, EXP-003); a failure needs a new ADR.
 2. AirNow `PM25_Measured = 0` rows (909 in the whole archive, airnow card) are not filtered;
    whether any lie in the read scope is unchecked. → ADR?
-3. AirNow reads 0.3–0.5 µg/m³ above NAPS/MECP at East, West and North (EXP-003); 2026 is
-   AirNow-only, so merged series step at 2025→2026. Correct AirNow? → [ADR 0010](../decisions/0010-airnow-offset.md) (proposed)
-4. NAPS 060438 sits within 500 m of 060430 (West) but reads +1.47 µg/m³, r 0.82, and is
-   averaged into the West site. Keep it? → [ADR 0011](../decisions/0011-naps-060438-west-site.md) (proposed)
+3. Closed: AirNow's +0.3–0.5 µg/m³ offset at East, West and North is left as published and
+   noted ([ADR 0010](../decisions/0010-airnow-offset.md)); revisit with the target series.
+4. Closed: NAPS 060438 is left out of the merged West series
+   ([ADR 0011](../decisions/0011-naps-060438-west-site.md)).
 
 ## Validation criteria
 

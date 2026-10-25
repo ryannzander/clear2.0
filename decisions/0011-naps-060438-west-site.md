@@ -1,7 +1,7 @@
 ---
 id: 0011
 title: NAPS 060438 in the Toronto West site
-status: proposed
+status: accepted
 date: 2026-10-24
 decided_by: Ryan
 affects: [methodology/stations.md]
@@ -31,9 +31,14 @@ into that site and `merged` averages it with 060430 (same source). EXP-003 shows
 
 ## Decision
 
-_Pending._
+Option B, chosen by Ryan 2026-10-24: NAPS 060438 stays in the registry and in `separate`
+mode, but is left out of the `merged` series (it remains a member of the West site).
 
 ## Consequences
 
-- Config keys: `config/stations.yaml` (an exclusion list)
-- Code: `src/clear/stations/combine.py`
+- Config keys: `config/stations.yaml: merged_exclude_stations`
+- Code: `src/clear/stations/combine.py`, `src/clear/stations/pipeline.py`
+- Tests: `tests/unit/test_stations_core.py` (`test_merged_series_leaves_out_excluded_stations`,
+  `..._exclusion_lets_a_lower_priority_source_fill`, `..._rejects_unknown_excluded_station`)
+- Experiments: EXP-001 and EXP-003 metrics refreshed (West merged train 1.000 → 0.991)
+- Specs to update: `methodology/stations.md#combine-sources`

@@ -7,8 +7,8 @@ inputs:
 - path: src/clear/viz/tokens.yaml
   sha256: bcc89744a356ac176ced3f83e5b67f7cd663259c3cc104ff6eb44106901df2ff
 script: figures/src/fig_style-tokens.py
-git_commit: cf5d49b-dirty
-generated_utc: '2026-10-24T22:40:17Z'
+git_commit: b288303-dirty
+generated_utc: '2026-10-25T00:07:01Z'
 ---
 
 # fig_style-tokens

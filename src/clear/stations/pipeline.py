@@ -192,7 +192,12 @@ def build_stations(
         source_priority=config.source_priority,
     )
     hourly = hourly[hourly["station_id"].isin(registry["station_id"])].reset_index(drop=True)
-    merged = merged_series(hourly, registry, source_priority=config.source_priority)
+    merged = merged_series(
+        hourly,
+        registry,
+        source_priority=config.source_priority,
+        exclude_stations=config.merged_exclude_stations,
+    )
     coverage_end = hourly["time_utc"].max() + pd.Timedelta(hours=1)
     complete = pd.concat(
         [
