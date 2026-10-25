@@ -29,3 +29,5 @@ blockers. These minors are open; fix them when the stations/grid code is next to
 13. `build_registry` inner join drops stations with no valid hour silently; count or test it.
 14. `src/clear/INDEX.md` stations line misses `settings`; code.md layout table has no `geo.py`.
 15. One 95-file commit instead of logical units (accepted for this phase; split next time).
+16. No test checks that `build_stations` passes `config.merged_exclude_stations` into
+    `merged_series` (no `build_stations` tests at all yet); from the ADR 0010/0011 review (57e1cc0).
